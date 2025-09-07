@@ -252,6 +252,7 @@ export const listItem = style({
 // テーブル
 // ------------------------------
 export const table = style({
+  lineBreak: "anywhere",
   marginBlock: space.l,
   maxWidth: "100%",
   borderCollapse: "collapse",
