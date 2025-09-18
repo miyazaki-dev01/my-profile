@@ -60,22 +60,22 @@ export const getBlogListDataForTop = async (): Promise<BlogCardProps[]> => {
 
 // ポートフォリオ一覧
 export const getPortfolioListData = async (): Promise<PortfolioCardProps[]> => {
-  const data = await client.get({
+  const data = await client.getAllContents({
     endpoint: "portfolio",
     queries: { fields: "id,title,description,thumbnail,articleSlug" },
   });
-  return data.contents;
+  return data;
 };
 
 // ブログ一覧
 export const getBlogListData = async (): Promise<BlogCardProps[]> => {
-  const data = await client.get({
+  const data = await client.getAllContents({
     endpoint: "blog",
     queries: {
       fields: "id,title,category,thumbnail,articleSlug,revisedAt",
     },
   });
-  return data.contents;
+  return data;
 };
 
 // --------------------------------------------------
@@ -86,14 +86,14 @@ export const getBlogListData = async (): Promise<BlogCardProps[]> => {
 export const getAllPortfolioSlugs = async (): Promise<
   { articleSlug: string }[] | []
 > => {
-  const data = await client.get({
+  const data = await client.getAllContents({
     endpoint: "portfolio",
     queries: {
       fields: "articleSlug",
     },
   });
 
-  return data.contents ?? [];
+  return data ?? [];
 };
 
 // slugに対応する詳細を取得
@@ -136,13 +136,13 @@ export async function getPortfolioById(
 
 // カスタムURLを全件取得
 export const getAllBlogSlugs = async (): Promise<{ articleSlug: string }[]> => {
-  const data = await client.get({
+  const data = await client.getAllContents({
     endpoint: "blog",
     queries: {
       fields: "articleSlug",
     },
   });
-  return data.contents ?? [];
+  return data ?? [];
 };
 
 // slugに対応する詳細を取得
