@@ -15,7 +15,7 @@ permissions:
 
 defaults:
   run:
-    working-directory: my_profile
+    working-directory: .
 
 concurrency:
   group: deploy-static
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-          cache-dependency-path: "my_profile/package-lock.json"
+          cache-dependency-path: "package-lock.json"
 
       - name: Install deps
         run: npm ci

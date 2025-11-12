@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
-  front:
-    container_name: my_profile
+  app:
+    container_name: my-profile-front
     build:
       context: ./
       dockerfile: Dockerfile
@@ -11,6 +9,6 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - WATCHPACK_POLLING=true #ホットリロード（ソースコードを即時にアプリケーションに反映）
+      - WATCHPACK_POLLING=true
     tty: true
     stdin_open: true
