@@ -19,9 +19,9 @@ export const NotFoundPage = () => {
             <p className={styles.notFoundMessage}>
               お探しのページは見つかりませんでした
             </p>
-            <button type="button" className={styles.notFoundButton}>
+            <Link href={PATH.profile} className={styles.notFoundButton}>
               <span>トップページへ</span>
-            </button>
+            </Link>
           </div>
         </div>
       </main>
