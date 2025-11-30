@@ -2,7 +2,7 @@
 
 import React from "react";
 import LogoSvg from "@public/logo.svg";
-import { usePageLoadingContext } from "@/contexts/PageLoadingContext";
+import { usePageLoadingOptional } from "@/contexts/PageLoadingContext";
 import { Color, colors } from "@/theme/colors";
 import * as styles from "./style.css";
 
@@ -24,7 +24,7 @@ const variantClassMap: Record<Variant, string> = {
 
 export const Logo: React.FC<Props> = React.memo(
   ({ variant, fill = "black", skeleton = false, fageIn = false }) => {
-    const { isLoading } = usePageLoadingContext();
+    const { isLoading } = usePageLoadingOptional();
     const showSkeleton = skeleton && isLoading;
 
     const variantClass = variantClassMap[variant];

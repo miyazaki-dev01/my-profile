@@ -21,11 +21,27 @@ export function PageLoadingProvider({
   );
 }
 
+/**
+ * 厳格版: Provider が必須
+ *  - BFF やルーティング制御など、「絶対に context が必要な用途」に使う
+ */
 export function usePageLoadingContext(): Ctx {
   const ctx = useContext(PageLoadingContext);
   if (!ctx)
     throw new Error(
       "usePageLoadingContext must be used inside <PageLoadingProvider>."
     );
+  return ctx;
+}
+
+/**
+ * 安全版: Provider がなくても動く
+ *  - Provider がなければ isLoading=false として扱う
+ */
+export function usePageLoadingOptional(): Ctx {
+  const ctx = useContext(PageLoadingContext);
+  if (!ctx) {
+    return { isLoading: false };
+  }
   return ctx;
 }
