@@ -29,6 +29,7 @@ export const Logo: React.FC<Props> = React.memo(
         height={size}
         priority
         draggable={false}
+        className={styles.linkFadeIn}
       />
     );
   }

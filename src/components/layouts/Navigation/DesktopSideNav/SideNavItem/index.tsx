@@ -21,7 +21,9 @@ export const SideNavItem: React.FC<Props> = React.memo(({ href, label }) => {
           style={{ width: `${Math.max(label.length, 3)}ch` }}
         />
       ) : (
-        <Link href={href}>{label}</Link>
+        <Link href={href} className={styles.linkFadeIn}>
+          {label}
+        </Link>
       )}
     </li>
   );

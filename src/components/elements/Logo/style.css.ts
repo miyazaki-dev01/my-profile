@@ -23,3 +23,16 @@ export const skeletonCircle = style({
     },
   },
 });
+
+const fadeInStyle = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
+
+export const linkFadeIn = style({
+  opacity: 0,
+  animationName: fadeInStyle,
+  animationDuration: "0.4s",
+  animationTimingFunction: "ease-in-out",
+  animationFillMode: "forwards",
+});

@@ -1,4 +1,4 @@
-import { keyframes, style } from "@vanilla-extract/css";
+import { style, keyframes } from "@vanilla-extract/css";
 import { colors } from "@/theme/colors";
 
 // スケルトンアニメーション
@@ -23,4 +23,17 @@ export const skeletonLine = style({
       animation: `${shimmer} 1.2s linear infinite`,
     },
   },
+});
+
+const fadeInStyle = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
+
+export const linkFadeIn = style({
+  opacity: 0,
+  animationName: fadeInStyle,
+  animationDuration: "0.4s",
+  animationTimingFunction: "ease-in-out",
+  animationFillMode: "forwards",
 });
