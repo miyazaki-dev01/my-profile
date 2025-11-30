@@ -1,5 +1,4 @@
 import React from "react";
-import "@/styles/globals.css";
 import { Navigation } from "@/components/layouts/Navigation";
 import { PageLoadingProvider } from "@/contexts/PageLoadingContext";
 
