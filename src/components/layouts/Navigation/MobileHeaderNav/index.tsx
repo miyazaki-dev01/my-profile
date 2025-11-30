@@ -31,7 +31,7 @@ export const MobileHeaderNav: React.FC = React.memo(() => {
         <div>
           {!menuOpen && (
             <Link href={PATH.profile}>
-              <Logo size={36} />
+              <Logo variant="headerNav" fill="black" />
             </Link>
           )}
         </div>

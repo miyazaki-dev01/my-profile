@@ -13,7 +13,7 @@ export const DesktopSideNav: React.FC = React.memo(() => {
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
         <Link href={PATH.profile} className={styles.sidebarLogo}>
-          <Logo size={72} skeleton fageIn />
+          <Logo variant="sideNav" fill="black" skeleton fageIn />
         </Link>
         <nav className={styles.sidebarNav}>
           <div className={styles.sidebarSectionWrapper}>

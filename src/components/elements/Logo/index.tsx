@@ -1,36 +1,42 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { IMAGES } from "@/constants/images";
+import LogoSvg from "@public/logo.svg";
 import { usePageLoadingContext } from "@/contexts/PageLoadingContext";
+import { Color, colors } from "@/theme/colors";
 import * as styles from "./style.css";
 
+type Variant = "sideNav" | "headerNav" | "notFoundHeader" | "NotFoundCenter";
+
 type Props = {
-  size?: number;
+  variant: Variant;
+  fill?: Color;
   skeleton?: boolean;
   fageIn?: boolean;
 };
 
+const variantClassMap: Record<Variant, string> = {
+  sideNav: styles.sideNav,
+  headerNav: styles.headerNav,
+  notFoundHeader: styles.notFoundHeader,
+  NotFoundCenter: styles.NotFoundCenter,
+};
+
 export const Logo: React.FC<Props> = React.memo(
-  ({ size = 64, skeleton = false, fageIn = false }) => {
+  ({ variant, fill = "black", skeleton = false, fageIn = false }) => {
     const { isLoading } = usePageLoadingContext();
     const showSkeleton = skeleton && isLoading;
 
+    const variantClass = variantClassMap[variant];
+
     return showSkeleton ? (
-      <span
-        className={styles.skeletonCircle}
-        style={{ width: size, height: size }}
-      />
+      <span className={`${styles.skeletonCircle} ${variantClass}`} />
     ) : (
-      <Image
-        src={IMAGES.logo}
-        alt="Logo"
-        width={size}
-        height={size}
-        priority
-        draggable={false}
-        className={fageIn ? styles.linkFadeIn : ""}
+      <LogoSvg
+        fill={colors[fill]}
+        className={`${styles.logoBase} ${variantClass} ${
+          fageIn ? styles.logoFadeIn : ""
+        }`}
       />
     );
   }

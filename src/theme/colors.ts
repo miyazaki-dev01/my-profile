@@ -9,3 +9,5 @@ export const colors = {
 } as const satisfies {
   [key: string]: string;
 };
+
+export type Color = keyof typeof colors;
