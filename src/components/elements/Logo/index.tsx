@@ -8,13 +8,14 @@ import * as styles from "./style.css";
 
 type Props = {
   size?: number;
-  withSkeleton?: boolean;
+  skeleton?: boolean;
+  fageIn?: boolean;
 };
 
 export const Logo: React.FC<Props> = React.memo(
-  ({ size = 64, withSkeleton = false }) => {
+  ({ size = 64, skeleton = false, fageIn = false }) => {
     const { isLoading } = usePageLoadingContext();
-    const showSkeleton = withSkeleton && isLoading;
+    const showSkeleton = skeleton && isLoading;
 
     return showSkeleton ? (
       <span
@@ -29,7 +30,7 @@ export const Logo: React.FC<Props> = React.memo(
         height={size}
         priority
         draggable={false}
-        className={styles.linkFadeIn}
+        className={fageIn ? styles.linkFadeIn : ""}
       />
     );
   }
