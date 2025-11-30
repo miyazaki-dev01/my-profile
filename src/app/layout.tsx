@@ -1,8 +1,6 @@
 import React from "react";
 import "@/styles/globals.css";
-import { Navigation } from "@/components/layouts/Navigation";
 import { barlow, roboto } from "@/lib/fonts";
-import { PageLoadingProvider } from "@/contexts/PageLoadingContext";
 
 export default function RootLayout({
   children,
@@ -12,10 +10,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${barlow.variable} ${roboto.variable}`}>
       <body>
-        <PageLoadingProvider>
-          <Navigation />
-          {children}
-        </PageLoadingProvider>
+        <div id="__next">{children}</div>
       </body>
     </html>
   );
