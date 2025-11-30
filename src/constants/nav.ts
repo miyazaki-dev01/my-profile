@@ -9,33 +9,33 @@ export type NavPattern =
   | "contact";
 
 export interface NavItem {
-  lavel: string;
+  label: string;
   path: string;
 }
 
 export const NAV_ITEM = {
   profile: {
-    lavel: "PROFILE",
+    label: "PROFILE",
     path: PATH.profile,
   },
   portfolio: {
-    lavel: "PORTFOLIO",
+    label: "PORTFOLIO",
     path: PATH.portfolio,
   },
   blog: {
-    lavel: "BLOG",
+    label: "BLOG",
     path: PATH.blog,
   },
   skill: {
-    lavel: "SKILL",
+    label: "SKILL",
     path: PATH.skill,
   },
   career: {
-    lavel: "CAREER",
+    label: "CAREER",
     path: PATH.career,
   },
   contact: {
-    lavel: "CONTACT",
+    label: "CONTACT",
     path: PATH.contact,
   },
 } as const satisfies {

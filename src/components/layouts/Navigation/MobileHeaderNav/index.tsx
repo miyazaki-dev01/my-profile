@@ -71,31 +71,31 @@ export const MobileHeaderNav: React.FC = React.memo(() => {
               <HeaderNavSection>
                 <HeaderNavItem
                   href={NAV_ITEM.profile.path}
-                  label={NAV_ITEM.profile.lavel}
+                  label={NAV_ITEM.profile.label}
                   onClick={() => setMenuOpen(false)}
                 />
               </HeaderNavSection>
               <HeaderNavSection>
                 <HeaderNavItem
                   href={NAV_ITEM.portfolio.path}
-                  label={NAV_ITEM.portfolio.lavel}
+                  label={NAV_ITEM.portfolio.label}
                   onClick={() => setMenuOpen(false)}
                 />
                 <HeaderNavItem
                   href={NAV_ITEM.blog.path}
-                  label={NAV_ITEM.blog.lavel}
+                  label={NAV_ITEM.blog.label}
                   onClick={() => setMenuOpen(false)}
                 />
               </HeaderNavSection>
               <HeaderNavSection>
                 <HeaderNavItem
                   href={NAV_ITEM.skill.path}
-                  label={NAV_ITEM.skill.lavel}
+                  label={NAV_ITEM.skill.label}
                   onClick={() => setMenuOpen(false)}
                 />
                 <HeaderNavItem
                   href={NAV_ITEM.career.path}
-                  label={NAV_ITEM.career.lavel}
+                  label={NAV_ITEM.career.label}
                   onClick={() => setMenuOpen(false)}
                 />
               </HeaderNavSection>
@@ -103,7 +103,7 @@ export const MobileHeaderNav: React.FC = React.memo(() => {
             <HeaderNavSection>
               <HeaderNavItem
                 href={NAV_ITEM.contact.path}
-                label={NAV_ITEM.contact.lavel}
+                label={NAV_ITEM.contact.label}
                 onClick={() => setMenuOpen(false)}
               />
             </HeaderNavSection>
