@@ -1,10 +1,12 @@
 import { style } from "@vanilla-extract/css";
 import { breakpoints } from "@/theme/breakpoints";
 
+const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
+
 export const desktopSideNav = style({
   display: "none",
   "@media": {
-    [`screen and (min-width: ${breakpoints.desktop}px)`]: {
+    [pcMedia]: {
       display: "block",
     },
   },
@@ -12,7 +14,7 @@ export const desktopSideNav = style({
 
 export const mobileHeaderNav = style({
   "@media": {
-    [`screen and (min-width: ${breakpoints.desktop}px)`]: {
+    [pcMedia]: {
       display: "none",
     },
   },
