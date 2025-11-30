@@ -1,0 +1,33 @@
+import Link from "next/link";
+import { Logo } from "@/components/elements/Logo";
+import { PATH } from "@/constants/paths";
+import { COPYRIGHT } from "@/constants/copyright";
+import * as styles from "./style.css";
+
+export const NotFoundPage = () => {
+  return (
+    <>
+      <Link href={PATH.profile} className={styles.brandLogoLink}>
+        <Logo variant="notFoundHeader" fill="white" />
+      </Link>
+      <main className={styles.main}>
+        <div className={styles.gridContainer}>
+          <div className={styles.logoWrapper}>
+            <Logo variant="NotFoundCenter" fill="white" />
+          </div>
+          <div className={styles.gridBody}>
+            <p className={styles.notFoundMessage}>
+              お探しのページは見つかりませんでした
+            </p>
+            <button type="button" className={styles.notFoundButton}>
+              <span>トップページへ</span>
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer className={styles.footer}>
+        <small className={styles.footerText}>{COPYRIGHT}</small>
+      </footer>
+    </>
+  );
+};

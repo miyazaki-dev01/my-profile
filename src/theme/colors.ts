@@ -6,6 +6,7 @@ export const colors = {
   darkGray: "#00000066",
   skeletonWhite: "#FFFFFFCC",
   skeletonGray: "#0000000A",
+  notFoundCopyright: "#FFFFFF66",
 } as const satisfies {
   [key: string]: string;
 };

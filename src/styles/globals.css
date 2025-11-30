@@ -6,15 +6,20 @@ html {
   font-family: var(--font-barlow), system-ui;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: #fff;
   color: #000;
 }
 
-body,
-html {
-  height: 100%;
-  width: 100%;
+.dark body {
+  background-color: #000;
+  color: #fff;
 }
 
 #__next {

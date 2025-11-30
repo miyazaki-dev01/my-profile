@@ -96,7 +96,7 @@ export const notFoundHeader = style({
 export const NotFoundCenter = style({
   vars: {
     [logoSizeSpVar]: "100px",
-    [logoSizeTbVar]: "100px",
+    [logoSizeTbVar]: "160px",
     [logoSizePcVar]: "160px",
   },
 });

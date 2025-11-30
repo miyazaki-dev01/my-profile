@@ -10,7 +10,7 @@ export const barlow = Barlow_Condensed({
 
 export const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["500"],
   variable: "--font-roboto",
   display: "swap",
   fallback: ["system-ui"],
