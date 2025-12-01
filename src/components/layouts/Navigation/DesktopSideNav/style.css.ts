@@ -11,6 +11,9 @@ export const sidebar = style({
   padding: "64px 0px 40px 40px",
   overflowY: "auto",
   scrollbarWidth: "none",
+  backgroundColor: colors.sideNavBackground,
+  backdropFilter: "blur(54px)",
+  WebkitBackdropFilter: "blur(54px)",
 });
 
 export const sidebarInner = style({

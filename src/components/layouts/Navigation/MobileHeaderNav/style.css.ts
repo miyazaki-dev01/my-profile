@@ -16,13 +16,15 @@ export const headerBase = style({
   width: "100%",
   paddingLeft: "24px",
   paddingRight: "16px",
-  background: colors.headerBackground,
+  backgroundColor: colors.headerNavBackground,
   backdropFilter: "blur(10px)",
   WebkitBackdropFilter: "blur(10px)",
 });
 
 export const headerOpen = style({
   backgroundColor: "transparent",
+  backdropFilter: "none",
+  WebkitBackdropFilter: "none",
 });
 
 export const menuButton = style({
