@@ -1,10 +1,10 @@
 import React from "react";
 import * as styles from "./style.css";
 
-type Props = Readonly<{
+type Props = {
   children: React.ReactNode;
-}>;
+};
 
-export const HeaderNavSection: React.FC<Props> = React.memo(({ children }) => {
+export function HeaderNavSection({ children }: Props) {
   return <ul className={styles.headerNavSection}>{children}</ul>;
-});
+}

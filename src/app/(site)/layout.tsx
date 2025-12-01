@@ -2,11 +2,11 @@ import React from "react";
 import { Navigation } from "@/components/layouts/Navigation";
 import { PageLoadingProvider } from "@/contexts/PageLoadingContext";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type SiteLayoutProps = {
   children: React.ReactNode;
-}>) {
+};
+
+export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <PageLoadingProvider>
       <Navigation />

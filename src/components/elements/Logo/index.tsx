@@ -12,7 +12,7 @@ type Props = {
   variant: Variant;
   fill?: Color;
   skeleton?: boolean;
-  fageIn?: boolean;
+  fadeIn?: boolean;
 };
 
 const variantClassMap: Record<Variant, string> = {
@@ -22,22 +22,25 @@ const variantClassMap: Record<Variant, string> = {
   NotFoundCenter: styles.NotFoundCenter,
 };
 
-export const Logo: React.FC<Props> = React.memo(
-  ({ variant, fill = "black", skeleton = false, fageIn = false }) => {
-    const { isLoading } = usePageLoadingOptional();
-    const showSkeleton = skeleton && isLoading;
+export function Logo({
+  variant,
+  fill = "black",
+  skeleton = false,
+  fadeIn = false,
+}: Props) {
+  const { isLoading } = usePageLoadingOptional();
+  const showSkeleton = skeleton && isLoading;
 
-    const variantClass = variantClassMap[variant];
+  const variantClass = variantClassMap[variant];
 
-    return showSkeleton ? (
-      <span className={`${styles.skeletonCircle} ${variantClass}`} />
-    ) : (
-      <LogoSvg
-        fill={colors[fill]}
-        className={`${styles.logoBase} ${variantClass} ${
-          fageIn ? styles.logoFadeIn : ""
-        }`}
-      />
-    );
-  }
-);
+  return showSkeleton ? (
+    <span className={`${styles.skeletonCircle} ${variantClass}`} />
+  ) : (
+    <LogoSvg
+      fill={colors[fill]}
+      className={`${styles.logoBase} ${variantClass} ${
+        fadeIn ? styles.logoFadeIn : ""
+      }`}
+    />
+  );
+}

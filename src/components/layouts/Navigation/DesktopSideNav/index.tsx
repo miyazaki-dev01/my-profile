@@ -8,12 +8,12 @@ import { NAV_ITEM } from "@/constants/nav";
 import { COPYRIGHT } from "@/constants/copyright";
 import * as styles from "./style.css";
 
-export const DesktopSideNav: React.FC = React.memo(() => {
+export function DesktopSideNav() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
         <Link href={PATH.profile} className={styles.sidebarLogo}>
-          <Logo variant="sideNav" fill="black" skeleton fageIn />
+          <Logo variant="sideNav" fill="black" skeleton fadeIn />
         </Link>
         <nav className={styles.sidebarNav}>
           <div className={styles.sidebarSectionWrapper}>
@@ -55,4 +55,4 @@ export const DesktopSideNav: React.FC = React.memo(() => {
       </div>
     </aside>
   );
-});
+}

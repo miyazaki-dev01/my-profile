@@ -4,7 +4,7 @@ import { PATH } from "@/constants/paths";
 import { COPYRIGHT } from "@/constants/copyright";
 import * as styles from "./style.css";
 
-export const NotFoundPage = () => {
+export function NotFoundPage() {
   return (
     <>
       <Link href={PATH.profile} className={styles.brandLogoLink}>
@@ -30,4 +30,4 @@ export const NotFoundPage = () => {
       </footer>
     </>
   );
-};
+}

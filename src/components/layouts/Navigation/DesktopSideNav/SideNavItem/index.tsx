@@ -10,7 +10,7 @@ type Props = {
   label: string;
 };
 
-export const SideNavItem: React.FC<Props> = React.memo(({ href, label }) => {
+export function SideNavItem({ href, label }: Props) {
   const { isLoading } = usePageLoadingContext();
 
   return (
@@ -27,4 +27,4 @@ export const SideNavItem: React.FC<Props> = React.memo(({ href, label }) => {
       )}
     </li>
   );
-});
+}

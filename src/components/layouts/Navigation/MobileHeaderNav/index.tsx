@@ -10,7 +10,7 @@ import { HeaderNavSection } from "@/components/layouts/Navigation/MobileHeaderNa
 import { HeaderNavItem } from "@/components/layouts/Navigation/MobileHeaderNav/HeaderNavItem";
 import * as styles from "./style.css";
 
-export const MobileHeaderNav: React.FC = React.memo(() => {
+export function MobileHeaderNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // スクロールロック
@@ -112,4 +112,4 @@ export const MobileHeaderNav: React.FC = React.memo(() => {
       </div>
     </>
   );
-});
+}

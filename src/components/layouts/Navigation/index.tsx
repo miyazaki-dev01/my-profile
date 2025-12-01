@@ -3,7 +3,7 @@ import { DesktopSideNav } from "@/components/layouts/Navigation/DesktopSideNav";
 import { MobileHeaderNav } from "@/components/layouts/Navigation/MobileHeaderNav";
 import * as styles from "./style.css";
 
-export const Navigation: React.FC = React.memo(() => {
+export function Navigation() {
   return (
     <>
       <div className={styles.desktopSideNav}>
@@ -14,4 +14,4 @@ export const Navigation: React.FC = React.memo(() => {
       </div>
     </>
   );
-});
+}

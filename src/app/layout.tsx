@@ -2,11 +2,11 @@ import React from "react";
 import "@/styles/globals.css";
 import { barlow, roboto } from "@/lib/fonts";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode;
-}>) {
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja" className={`${barlow.variable} ${roboto.variable}`}>
       <body>

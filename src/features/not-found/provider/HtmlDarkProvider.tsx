@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, type ReactNode } from "react";
+import React from "react";
+import { useEffect } from "react";
 
 type Props = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
-export const HtmlDarkProvider: React.FC<Props> = ({ children }) => {
+export function HtmlDarkProvider({ children }: Props) {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("dark");
@@ -16,4 +17,4 @@ export const HtmlDarkProvider: React.FC<Props> = ({ children }) => {
   }, []);
 
   return <>{children}</>;
-};
+}

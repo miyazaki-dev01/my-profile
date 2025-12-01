@@ -7,14 +7,12 @@ type Props = {
   onClick: () => void;
 };
 
-export const HeaderNavItem: React.FC<Props> = React.memo(
-  ({ href, label, onClick }) => {
-    return (
-      <li>
-        <Link href={href} onClick={onClick}>
-          {label}
-        </Link>
-      </li>
-    );
-  }
-);
+export function HeaderNavItem({ href, label, onClick }: Props) {
+  return (
+    <li>
+      <Link href={href} onClick={onClick}>
+        {label}
+      </Link>
+    </li>
+  );
+}
