@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import LogoSvg from "@public/logo.svg";
+import LogoSvg from "@public/logo/logo.svg";
 import { usePageLoadingOptional } from "@/contexts/PageLoadingContext";
 import { Color, colors } from "@/theme/colors";
 import * as styles from "./style.css";
