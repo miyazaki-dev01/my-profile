@@ -1,5 +1,5 @@
 import { style, createVar } from "@vanilla-extract/css";
-import { colors } from "@/theme/colors";
+import { colors } from "@/themes/colors";
 
 const tyVar = createVar(); // translateY
 const rotVar = createVar(); // rotate

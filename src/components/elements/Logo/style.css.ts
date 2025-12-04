@@ -1,6 +1,6 @@
 import { createVar, keyframes, style } from "@vanilla-extract/css";
-import { colors } from "@/theme/colors";
-import { breakpoints } from "@/theme/breakpoints";
+import { colors } from "@/themes/colors";
+import { breakpoints } from "@/themes/breakpoints";
 
 // ブレイクポイント
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;

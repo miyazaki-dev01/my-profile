@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { breakpoints } from "@/theme/breakpoints";
+import { breakpoints } from "@/themes/breakpoints";
 
 const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
 

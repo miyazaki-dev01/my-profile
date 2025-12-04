@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "@/theme/colors";
+import { colors } from "@/themes/colors";
 
 export const sidebar = style({
   position: "fixed",

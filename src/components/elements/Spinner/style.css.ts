@@ -1,5 +1,5 @@
 import { style, keyframes } from "@vanilla-extract/css";
-import { colors } from "@/theme/colors";
+import { colors } from "@/themes/colors";
 
 const rotate = keyframes({
   to: {

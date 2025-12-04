@@ -3,7 +3,7 @@
 import React from "react";
 import LogoSvg from "@public/logo/logo.svg";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
-import { Color, colors } from "@/theme/colors";
+import { Color, colors } from "@/themes/colors";
 import * as styles from "./style.css";
 
 type Variant = "sideNav" | "headerNav" | "notFoundHeader" | "NotFoundCenter";

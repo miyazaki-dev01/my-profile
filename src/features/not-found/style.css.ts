@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import { breakpoints } from "@/theme/breakpoints";
-import { colors } from "@/theme/colors";
+import { breakpoints } from "@/themes/breakpoints";
+import { colors } from "@/themes/colors";
 
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
