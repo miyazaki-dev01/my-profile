@@ -1,10 +1,10 @@
 import { NotFoundPage } from "@/features/not-found";
-import { HtmlDarkProvider } from "@/features/not-found/provider/HtmlDarkProvider";
+import { HtmlDarkModeWrapper } from "@/providers/HtmlDarkModeWrapper";
 
 export default function NotFoundPageRoute() {
   return (
-    <HtmlDarkProvider>
+    <HtmlDarkModeWrapper>
       <NotFoundPage />
-    </HtmlDarkProvider>
+    </HtmlDarkModeWrapper>
   );
 }

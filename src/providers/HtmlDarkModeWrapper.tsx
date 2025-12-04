@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export function HtmlDarkProvider({ children }: Props) {
+export function HtmlDarkModeWrapper({ children }: Props) {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("dark");
