@@ -1,6 +1,6 @@
 import React from "react";
 import "@/styles/globals.css";
-import { barlow, roboto } from "@/lib/fonts";
+import { barlow, roboto } from "@/libs/fonts";
 import { InitialLoadingProvider } from "@/contexts/InitialLoadingContext";
 
 type RootLayoutProps = {
