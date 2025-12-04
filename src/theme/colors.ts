@@ -1,8 +1,8 @@
 export const colors = {
   black: "#000",
   white: "#FFF",
-  lightGray: "#0000001A",
   darkGray: "#00000066",
+  lightGray: "#0000001A",
   sideNavBackground: "#FFFFFF33",
   headerNavBackground: "#FFFFFFF0",
   skeletonWhite: "#FFFFFFCC",
