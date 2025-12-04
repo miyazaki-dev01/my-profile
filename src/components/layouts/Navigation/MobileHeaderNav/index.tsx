@@ -3,6 +3,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
+import { FadeIn } from "@/components/elements/FadeIn";
+import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { Logo } from "@/components/elements/Logo";
 import { PATH } from "@/constants/paths";
 import { NAV_ITEM } from "@/constants/nav";
@@ -11,6 +14,7 @@ import { HeaderNavItem } from "@/components/layouts/Navigation/MobileHeaderNav/H
 import * as styles from "./style.css";
 
 export function MobileHeaderNav() {
+  const { isInitialLoading } = useInitialLoadingContext();
   const [menuOpen, setMenuOpen] = useState(false);
 
   // スクロールロック
@@ -36,8 +40,6 @@ export function MobileHeaderNav() {
           )}
         </div>
         <div
-          role="button"
-          tabIndex={0}
           className={styles.menuButton}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -62,54 +64,66 @@ export function MobileHeaderNav() {
       </header>
 
       {/* オーバーレイメニュー */}
-      <div
-        className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ""}`}
-      >
-        <div className={`${styles.panel} ${menuOpen ? styles.panelOpen : ""}`}>
-          <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
-            <div className={styles.headerSectionWrapper}>
-              <HeaderNavSection>
-                <HeaderNavItem
-                  href={NAV_ITEM.profile.path}
-                  label={NAV_ITEM.profile.label}
-                  onClick={() => setMenuOpen(false)}
-                />
-              </HeaderNavSection>
-              <HeaderNavSection>
-                <HeaderNavItem
-                  href={NAV_ITEM.portfolio.path}
-                  label={NAV_ITEM.portfolio.label}
-                  onClick={() => setMenuOpen(false)}
-                />
-                <HeaderNavItem
-                  href={NAV_ITEM.blog.path}
-                  label={NAV_ITEM.blog.label}
-                  onClick={() => setMenuOpen(false)}
-                />
-              </HeaderNavSection>
-              <HeaderNavSection>
-                <HeaderNavItem
-                  href={NAV_ITEM.skill.path}
-                  label={NAV_ITEM.skill.label}
-                  onClick={() => setMenuOpen(false)}
-                />
-                <HeaderNavItem
-                  href={NAV_ITEM.career.path}
-                  label={NAV_ITEM.career.label}
-                  onClick={() => setMenuOpen(false)}
-                />
-              </HeaderNavSection>
+      {isInitialLoading ? (
+        <LoadingScreen />
+      ) : (
+        <FadeIn key={isInitialLoading ? "loading" : "loaded"}>
+          <div
+            className={`${styles.overlay} ${
+              menuOpen ? styles.overlayOpen : ""
+            }`}
+          >
+            <div
+              className={`${styles.panel} ${menuOpen ? styles.panelOpen : ""}`}
+            >
+              <nav
+                className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
+              >
+                <div className={styles.headerSectionWrapper}>
+                  <HeaderNavSection>
+                    <HeaderNavItem
+                      href={NAV_ITEM.profile.path}
+                      label={NAV_ITEM.profile.label}
+                      onClick={() => setMenuOpen(false)}
+                    />
+                  </HeaderNavSection>
+                  <HeaderNavSection>
+                    <HeaderNavItem
+                      href={NAV_ITEM.portfolio.path}
+                      label={NAV_ITEM.portfolio.label}
+                      onClick={() => setMenuOpen(false)}
+                    />
+                    <HeaderNavItem
+                      href={NAV_ITEM.blog.path}
+                      label={NAV_ITEM.blog.label}
+                      onClick={() => setMenuOpen(false)}
+                    />
+                  </HeaderNavSection>
+                  <HeaderNavSection>
+                    <HeaderNavItem
+                      href={NAV_ITEM.skill.path}
+                      label={NAV_ITEM.skill.label}
+                      onClick={() => setMenuOpen(false)}
+                    />
+                    <HeaderNavItem
+                      href={NAV_ITEM.career.path}
+                      label={NAV_ITEM.career.label}
+                      onClick={() => setMenuOpen(false)}
+                    />
+                  </HeaderNavSection>
+                </div>
+                <HeaderNavSection>
+                  <HeaderNavItem
+                    href={NAV_ITEM.contact.path}
+                    label={NAV_ITEM.contact.label}
+                    onClick={() => setMenuOpen(false)}
+                  />
+                </HeaderNavSection>
+              </nav>
             </div>
-            <HeaderNavSection>
-              <HeaderNavItem
-                href={NAV_ITEM.contact.path}
-                label={NAV_ITEM.contact.label}
-                onClick={() => setMenuOpen(false)}
-              />
-            </HeaderNavSection>
-          </nav>
-        </div>
-      </div>
+          </div>
+        </FadeIn>
+      )}
     </>
   );
 }

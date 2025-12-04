@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePageLoadingContext } from "@/contexts/PageLoadingContext";
+import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import * as styles from "./style.css";
 
 type Props = {
@@ -11,11 +11,11 @@ type Props = {
 };
 
 export function SideNavItem({ href, label }: Props) {
-  const { isLoading } = usePageLoadingContext();
+  const { isInitialLoading } = useInitialLoadingContext();
 
   return (
     <li>
-      {isLoading ? (
+      {isInitialLoading ? (
         <span
           className={styles.skeletonLine}
           style={{ width: `${Math.max(label.length, 3)}ch` }}

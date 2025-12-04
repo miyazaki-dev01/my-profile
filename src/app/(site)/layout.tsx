@@ -1,6 +1,5 @@
 import React from "react";
-import { PageLoadingProvider } from "@/contexts/PageLoadingContext";
-import { Navigation } from "@/components/layouts/Navigation";
+import { ContentLoadingProvider } from "@/contexts/ContentLoadingContext";
 import { BaseSiteLayout } from "@/components/layouts/BaseSiteLayout";
 
 type SiteLayoutProps = {
@@ -9,9 +8,8 @@ type SiteLayoutProps = {
 
 export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
-    <PageLoadingProvider>
-      <Navigation />
+    <ContentLoadingProvider>
       <BaseSiteLayout>{children}</BaseSiteLayout>
-    </PageLoadingProvider>
+    </ContentLoadingProvider>
   );
 }

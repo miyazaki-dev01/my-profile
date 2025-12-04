@@ -2,7 +2,7 @@
 
 import React from "react";
 import LogoSvg from "@public/logo/logo.svg";
-import { usePageLoadingOptional } from "@/contexts/PageLoadingContext";
+import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { Color, colors } from "@/theme/colors";
 import * as styles from "./style.css";
 
@@ -28,8 +28,8 @@ export function Logo({
   skeleton = false,
   fadeIn = false,
 }: Props) {
-  const { isLoading } = usePageLoadingOptional();
-  const showSkeleton = skeleton && isLoading;
+  const { isInitialLoading } = useInitialLoadingContext();
+  const showSkeleton = skeleton && isInitialLoading;
 
   const variantClass = variantClassMap[variant];
 
