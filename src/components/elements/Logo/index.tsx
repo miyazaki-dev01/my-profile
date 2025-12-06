@@ -6,7 +6,7 @@ import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { Color, colors } from "@/themes/colors";
 import * as styles from "./style.css";
 
-type LogoStyles = "sideNav" | "headerNav" | "notFoundHeader" | "NotFoundCenter";
+type LogoStyles = "sideNav" | "headerNav" | "notFoundHeader" | "notFoundCenter";
 
 type Props = {
   logoStyle: LogoStyles;
@@ -19,7 +19,7 @@ const logoStyleClassMap: Record<LogoStyles, string> = {
   sideNav: styles.sideNav,
   headerNav: styles.headerNav,
   notFoundHeader: styles.notFoundHeader,
-  NotFoundCenter: styles.NotFoundCenter,
+  notFoundCenter: styles.NotFoundCenter,
 };
 
 export function Logo({

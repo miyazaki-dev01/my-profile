@@ -13,7 +13,7 @@ export function NotFoundPage() {
       <main className={styles.main}>
         <div className={styles.gridContainer}>
           <div className={styles.logoWrapper}>
-            <Logo logoStyle="NotFoundCenter" fill="white" />
+            <Logo logoStyle="notFoundCenter" fill="white" />
           </div>
           <div className={styles.gridBody}>
             <p className={styles.notFoundMessage}>
