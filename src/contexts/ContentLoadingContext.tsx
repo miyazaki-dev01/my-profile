@@ -1,33 +1,24 @@
 "use client";
 
-import React, { createContext, useContext } from "react";
-import { useContentLoading } from "@/hooks/useContentLoading";
+import { createContext, useContext } from "react";
 
-type ContentLoadingCtx = { isContentLoading: boolean };
+export type ContentLoadingCtx = {
+  isContentLoading: boolean;
+};
 
-const ContentLoadingContext = createContext<ContentLoadingCtx | null>(null);
+export const ContentLoadingContext = createContext<ContentLoadingCtx | null>(
+  null
+);
 
 /**
- * ページ全体（画像なども含む）のロード完了を監視するコンテキストプロバイダー
+ * コンテンツロード状態を取得するカスタムフック
  */
-export function ContentLoadingProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const isContentLoading = useContentLoading();
-  return (
-    <ContentLoadingContext.Provider value={{ isContentLoading }}>
-      {children}
-    </ContentLoadingContext.Provider>
-  );
-}
-
 export function useContentLoadingContext(): ContentLoadingCtx {
   const ctx = useContext(ContentLoadingContext);
-  if (!ctx)
+  if (!ctx) {
     throw new Error(
       "useContentLoadingContext must be used inside <ContentLoadingProvider>."
     );
+  }
   return ctx;
 }

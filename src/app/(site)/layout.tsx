@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentLoadingProvider } from "@/contexts/ContentLoadingContext";
+import { ContentLoadingProvider } from "@/providers/ContentLoadingProvider";
 import { BaseSiteLayout } from "@/components/layouts/BaseSiteLayout";
 
 type SiteLayoutProps = {

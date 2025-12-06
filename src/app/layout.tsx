@@ -1,7 +1,7 @@
 import React from "react";
 import "@/styles/globals.css";
 import { barlow, roboto } from "@/libs/fonts";
-import { InitialLoadingProvider } from "@/contexts/InitialLoadingContext";
+import { InitialLoadingProvider } from "@/providers/InitialLoadingProvider";
 
 type RootLayoutProps = {
   children: React.ReactNode;

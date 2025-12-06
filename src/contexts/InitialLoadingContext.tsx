@@ -1,33 +1,22 @@
 "use client";
 
-import React, { createContext, useContext } from "react";
-import { useInitialLoading } from "@/hooks/useInitialLoading";
+import { createContext, useContext } from "react";
 
-type InitialLoadingCtx = { isInitialLoading: boolean };
+export type InitialLoadingCtx = { isInitialLoading: boolean };
 
-const InitialLoadingContext = createContext<InitialLoadingCtx | null>(null);
+export const InitialLoadingContext = createContext<InitialLoadingCtx | null>(
+  null
+);
 
 /**
- * 初回ロード判定のコンテキストプロバイダー
+ * 初回ロード判定のコンテキストを利用する hook
  */
-export function InitialLoadingProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const isInitialLoading = useInitialLoading();
-  return (
-    <InitialLoadingContext.Provider value={{ isInitialLoading }}>
-      {children}
-    </InitialLoadingContext.Provider>
-  );
-}
-
 export function useInitialLoadingContext(): InitialLoadingCtx {
   const ctx = useContext(InitialLoadingContext);
-  if (!ctx)
+  if (!ctx) {
     throw new Error(
       "useInitialLoadingContext must be used inside <InitialLoadingProvider>."
     );
+  }
   return ctx;
 }
