@@ -8,12 +8,12 @@ export function NotFoundPage() {
   return (
     <>
       <Link href={PATH.profile} className={styles.brandLogoLink}>
-        <Logo variant="notFoundHeader" fill="white" />
+        <Logo logoStyle="notFoundHeader" fill="white" />
       </Link>
       <main className={styles.main}>
         <div className={styles.gridContainer}>
           <div className={styles.logoWrapper}>
-            <Logo variant="NotFoundCenter" fill="white" />
+            <Logo logoStyle="NotFoundCenter" fill="white" />
           </div>
           <div className={styles.gridBody}>
             <p className={styles.notFoundMessage}>

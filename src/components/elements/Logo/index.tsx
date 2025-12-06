@@ -6,16 +6,16 @@ import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { Color, colors } from "@/themes/colors";
 import * as styles from "./style.css";
 
-type Variant = "sideNav" | "headerNav" | "notFoundHeader" | "NotFoundCenter";
+type LogoStyles = "sideNav" | "headerNav" | "notFoundHeader" | "NotFoundCenter";
 
 type Props = {
-  variant: Variant;
+  logoStyle: LogoStyles;
   fill?: Color;
   skeleton?: boolean;
   fadeIn?: boolean;
 };
 
-const variantClassMap: Record<Variant, string> = {
+const logoStyleClassMap: Record<LogoStyles, string> = {
   sideNav: styles.sideNav,
   headerNav: styles.headerNav,
   notFoundHeader: styles.notFoundHeader,
@@ -23,7 +23,7 @@ const variantClassMap: Record<Variant, string> = {
 };
 
 export function Logo({
-  variant,
+  logoStyle,
   fill = "black",
   skeleton = false,
   fadeIn = false,
@@ -31,14 +31,14 @@ export function Logo({
   const { isInitialLoading } = useInitialLoadingContext();
   const showSkeleton = skeleton && isInitialLoading;
 
-  const variantClass = variantClassMap[variant];
+  const logoStyleClass = logoStyleClassMap[logoStyle];
 
   return showSkeleton ? (
-    <span className={`${styles.skeletonCircle} ${variantClass}`} />
+    <span className={`${styles.skeletonCircle} ${logoStyleClass}`} />
   ) : (
     <LogoSvg
       fill={colors[fill]}
-      className={`${styles.logoBase} ${variantClass} ${
+      className={`${styles.logoBase} ${logoStyleClass} ${
         fadeIn ? styles.logoFadeIn : ""
       }`}
     />
