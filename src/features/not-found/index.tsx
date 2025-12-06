@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/elements/Logo";
 import { PATH } from "@/constants/paths";
-import { COPYRIGHT } from "@/constants/copyright";
+import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
 export function NotFoundPage() {
@@ -10,6 +10,7 @@ export function NotFoundPage() {
       <Link href={PATH.profile} className={styles.brandLogoLink}>
         <Logo logoStyle="notFoundHeader" fill="white" />
       </Link>
+
       <main className={styles.main}>
         <div className={styles.gridContainer}>
           <div className={styles.logoWrapper}>
@@ -25,8 +26,9 @@ export function NotFoundPage() {
           </div>
         </div>
       </main>
+
       <footer className={styles.footer}>
-        <small className={styles.footerText}>{COPYRIGHT}</small>
+        <Copyright style="notFoundFooter" tag="small" />
       </footer>
     </>
   );

@@ -103,7 +103,6 @@ export const footer = style({
   zIndex: 40,
   height: "60px",
   paddingLeft: "24px",
-  color: colors.notFoundCopyright,
   "@media": {
     [tbMedia]: {
       paddingLeft: "40px",

@@ -23,3 +23,22 @@ export const main = style({
     },
   },
 });
+
+export const footer = style({
+  display: "flex",
+  flexDirection: "column",
+  padding: "20px 0 24px 24px",
+  flexShrink: 0,
+  zIndex: 40,
+  "@media": {
+    [tbMedia]: {
+      flexDirection: "row",
+      alignItems: "center",
+      padding: "0 0 0 40px",
+      height: "60px",
+    },
+    [pcMedia]: {
+      display: "none",
+    },
+  },
+});

@@ -5,7 +5,7 @@ import { SideNavSection } from "@/components/layouts/Navigation/DesktopSideNav/S
 import { SideNavItem } from "@/components/layouts/Navigation/DesktopSideNav/SideNavItem";
 import { PATH } from "@/constants/paths";
 import { NAV_ITEM } from "@/constants/nav";
-import { COPYRIGHT } from "@/constants/copyright";
+import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
 export function DesktopSideNav() {
@@ -15,6 +15,7 @@ export function DesktopSideNav() {
         <Link href={PATH.profile} className={styles.sidebarLogo}>
           <Logo logoStyle="sideNav" fill="black" skeleton fadeIn />
         </Link>
+
         <nav className={styles.sidebarNav}>
           <div className={styles.sidebarSectionWrapper}>
             <SideNavSection>
@@ -51,7 +52,8 @@ export function DesktopSideNav() {
             />
           </SideNavSection>
         </nav>
-        <div className={styles.sidebarCopyright}>{COPYRIGHT}</div>
+
+        <Copyright style="sideNav" />
       </div>
     </aside>
   );

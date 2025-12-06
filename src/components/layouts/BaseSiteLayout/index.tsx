@@ -5,6 +5,7 @@ import { Navigation } from "@/components/layouts/Navigation";
 import { useContentLoadingContext } from "@/contexts/ContentLoadingContext";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { FadeIn } from "@/components/elements/FadeIn";
+import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
 type Props = {
@@ -25,6 +26,10 @@ export function BaseSiteLayout({ children }: Props) {
           <main className={styles.main}>{children}</main>
         )}
       </FadeIn>
+
+      <footer className={styles.footer}>
+        <Copyright style="mobileFooter" tag="small" />
+      </footer>
     </>
   );
 }
