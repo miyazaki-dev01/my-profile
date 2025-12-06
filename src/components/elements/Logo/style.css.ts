@@ -1,8 +1,12 @@
-import { createVar, keyframes, style } from "@vanilla-extract/css";
+import {
+  createVar,
+  keyframes,
+  style,
+  styleVariants,
+} from "@vanilla-extract/css";
 import { colors } from "@/themes/colors";
 import { breakpoints } from "@/themes/breakpoints";
 
-// ブレイクポイント
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
 
@@ -58,6 +62,38 @@ export const skeletonCircle = style({
   },
 });
 
+// バリアント: サイズ定義
+export const logoVariant = styleVariants({
+  sideNav: {
+    vars: {
+      [logoSizeSpVar]: "64px",
+      [logoSizeTbVar]: "64px",
+      [logoSizePcVar]: "64px",
+    },
+  },
+  headerNav: {
+    vars: {
+      [logoSizeSpVar]: "32px",
+      [logoSizeTbVar]: "32px",
+      [logoSizePcVar]: "32px",
+    },
+  },
+  notFoundHeader: {
+    vars: {
+      [logoSizeSpVar]: "32px",
+      [logoSizeTbVar]: "32px",
+      [logoSizePcVar]: "64px",
+    },
+  },
+  notFoundCenter: {
+    vars: {
+      [logoSizeSpVar]: "100px",
+      [logoSizeTbVar]: "160px",
+      [logoSizePcVar]: "160px",
+    },
+  },
+});
+
 // フェードイン
 const fadeInStyle = keyframes({
   from: { opacity: 0 },
@@ -69,34 +105,4 @@ export const logoFadeIn = style({
   animationDuration: "0.4s",
   animationTimingFunction: "ease-in-out",
   animationFillMode: "forwards",
-});
-
-// バリアント: サイズ定義
-export const sideNav = style({
-  vars: {
-    [logoSizeSpVar]: "64px",
-    [logoSizeTbVar]: "64px",
-    [logoSizePcVar]: "64px",
-  },
-});
-export const headerNav = style({
-  vars: {
-    [logoSizeSpVar]: "32px",
-    [logoSizeTbVar]: "32px",
-    [logoSizePcVar]: "32px",
-  },
-});
-export const notFoundHeader = style({
-  vars: {
-    [logoSizeSpVar]: "32px",
-    [logoSizeTbVar]: "32px",
-    [logoSizePcVar]: "64px",
-  },
-});
-export const NotFoundCenter = style({
-  vars: {
-    [logoSizeSpVar]: "100px",
-    [logoSizeTbVar]: "160px",
-    [logoSizePcVar]: "160px",
-  },
 });

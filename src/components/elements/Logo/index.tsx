@@ -6,24 +6,17 @@ import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { Color, colors } from "@/themes/colors";
 import * as styles from "./style.css";
 
-type LogoStyles = "sideNav" | "headerNav" | "notFoundHeader" | "notFoundCenter";
+type LogoStyles = keyof typeof styles.logoVariant;
 
 type Props = {
-  logoStyle: LogoStyles;
+  style: LogoStyles;
   fill?: Color;
   skeleton?: boolean;
   fadeIn?: boolean;
 };
 
-const logoStyleClassMap: Record<LogoStyles, string> = {
-  sideNav: styles.sideNav,
-  headerNav: styles.headerNav,
-  notFoundHeader: styles.notFoundHeader,
-  notFoundCenter: styles.NotFoundCenter,
-};
-
 export function Logo({
-  logoStyle,
+  style,
   fill = "black",
   skeleton = false,
   fadeIn = false,
@@ -31,14 +24,14 @@ export function Logo({
   const { isInitialLoading } = useInitialLoadingContext();
   const showSkeleton = skeleton && isInitialLoading;
 
-  const logoStyleClass = logoStyleClassMap[logoStyle];
+  const logoStyle = styles.logoVariant[style];
 
   return showSkeleton ? (
-    <span className={`${styles.skeletonCircle} ${logoStyleClass}`} />
+    <span className={`${styles.skeletonCircle} ${logoStyle}`} />
   ) : (
     <LogoSvg
       fill={colors[fill]}
-      className={`${styles.logoBase} ${logoStyleClass} ${
+      className={`${styles.logoBase} ${logoStyle} ${
         fadeIn ? styles.logoFadeIn : ""
       }`}
     />

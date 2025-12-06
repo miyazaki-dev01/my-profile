@@ -13,7 +13,7 @@ export function DesktopSideNav() {
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
         <Link href={PATH.profile} className={styles.sidebarLogo}>
-          <Logo logoStyle="sideNav" fill="black" skeleton fadeIn />
+          <Logo style="sideNav" fill="black" skeleton fadeIn />
         </Link>
 
         <nav className={styles.sidebarNav}>

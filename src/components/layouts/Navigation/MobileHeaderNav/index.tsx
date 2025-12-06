@@ -35,7 +35,7 @@ export function MobileHeaderNav() {
         <div>
           {!menuOpen && (
             <Link href={PATH.profile}>
-              <Logo logoStyle="headerNav" fill="black" />
+              <Logo style="headerNav" fill="black" />
             </Link>
           )}
         </div>
