@@ -1,6 +1,6 @@
 import * as styles from "./style.css";
 
-export type SpinnerColor = "black" | "white";
+export type SpinnerColor = keyof typeof styles.spinnerColor;
 
 type Props = {
   size: number;

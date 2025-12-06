@@ -19,11 +19,16 @@ export function MobileHeaderNav() {
 
   // スクロールロック
   useEffect(() => {
+    const body = document.body;
     if (menuOpen) {
-      document.body.style.overflow = "hidden";
+      body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      body.style.overflow = "";
     }
+
+    return () => {
+      body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
