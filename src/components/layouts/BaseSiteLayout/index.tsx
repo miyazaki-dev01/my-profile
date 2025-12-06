@@ -20,7 +20,7 @@ export function BaseSiteLayout({ children }: Props) {
 
       <FadeIn key={isContentLoading ? "loading" : "loaded"}>
         {isContentLoading ? (
-          <LoadingScreen />
+          <LoadingScreen spinnerSize={32} />
         ) : (
           <main className={styles.main}>{children}</main>
         )}

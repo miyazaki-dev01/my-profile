@@ -1,4 +1,4 @@
-import { style, keyframes } from "@vanilla-extract/css";
+import { style, keyframes, styleVariants } from "@vanilla-extract/css";
 import { colors } from "@/themes/colors";
 
 const rotate = keyframes({
@@ -8,23 +8,38 @@ const rotate = keyframes({
 });
 
 export const spinner = style({
-  width: "32px",
-  height: "32px",
   border: `2.6px solid ${colors.lightGray}`,
   borderRadius: "50%",
   position: "relative",
-  selectors: {
-    "&::after": {
-      content: '""',
-      position: "absolute",
-      top: "-2.6px",
-      bottom: "-2.6px",
-      right: "-2.6px",
-      left: "-2.6px",
-      border: "2.6px solid transparent",
-      borderTopColor: colors.black,
-      borderRadius: "50%",
-      animation: `${rotate} 1.2s linear infinite`,
+});
+
+const spinnerAfterBase = {
+  content: '""',
+  position: "absolute" as const,
+  top: "-2.6px",
+  bottom: "-2.6px",
+  right: "-2.6px",
+  left: "-2.6px",
+  border: "2.6px solid transparent",
+  borderRadius: "50%",
+  animation: `${rotate} 1.2s linear infinite`,
+};
+
+export const spinnerColor = styleVariants({
+  black: {
+    selectors: {
+      "&::after": {
+        ...spinnerAfterBase,
+        borderTopColor: colors.black,
+      },
+    },
+  },
+  white: {
+    selectors: {
+      "&::after": {
+        ...spinnerAfterBase,
+        borderTopColor: colors.white,
+      },
     },
   },
 });

@@ -65,7 +65,7 @@ export function MobileHeaderNav() {
 
       {/* オーバーレイメニュー */}
       {isInitialLoading ? (
-        <LoadingScreen />
+        <LoadingScreen spinnerSize={26} spinnerColor="white" />
       ) : (
         <FadeIn key={isInitialLoading ? "loading" : "loaded"}>
           <div
