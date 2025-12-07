@@ -5,6 +5,7 @@ import { Navigation } from "@/components/layouts/Navigation";
 import { useContentLoadingContext } from "@/contexts/ContentLoadingContext";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { FadeIn } from "@/components/elements/FadeIn";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
@@ -14,6 +15,7 @@ type Props = {
 
 export function BaseSiteLayout({ children }: Props) {
   const { isContentLoading } = useContentLoadingContext();
+  const isDesktop = useIsDesktop();
 
   return (
     <>
@@ -27,9 +29,11 @@ export function BaseSiteLayout({ children }: Props) {
         )}
       </FadeIn>
 
-      <footer className={styles.footer}>
-        <Copyright style="mobileFooter" tag="small" />
-      </footer>
+      {!isDesktop && (
+        <footer className={styles.footer}>
+          <Copyright style="mobileFooter" tag="small" />
+        </footer>
+      )}
     </>
   );
 }
