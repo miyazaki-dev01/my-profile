@@ -69,18 +69,14 @@ export function MobileHeaderNav() {
       </header>
 
       {/* オーバーレイメニュー */}
-      {isInitialLoading ? (
-        <LoadingScreen spinnerSize={26} spinnerColor="white" />
-      ) : (
-        <FadeIn key={isInitialLoading ? "loading" : "loaded"}>
-          <div
-            className={`${styles.overlay} ${
-              menuOpen ? styles.overlayOpen : ""
-            }`}
-          >
-            <div
-              className={`${styles.panel} ${menuOpen ? styles.panelOpen : ""}`}
-            >
+      <div
+        className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ""}`}
+      >
+        <div className={`${styles.panel} ${menuOpen ? styles.panelOpen : ""}`}>
+          <FadeIn key={isInitialLoading ? "loading" : "loaded"}>
+            {isInitialLoading ? (
+              <LoadingScreen spinnerSize={26} spinnerColor="white" />
+            ) : (
               <nav
                 className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
               >
@@ -125,10 +121,10 @@ export function MobileHeaderNav() {
                   />
                 </HeaderNavSection>
               </nav>
-            </div>
-          </div>
-        </FadeIn>
-      )}
+            )}
+          </FadeIn>
+        </div>
+      </div>
     </>
   );
 }

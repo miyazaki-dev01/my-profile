@@ -1,4 +1,9 @@
-import { style, keyframes, styleVariants } from "@vanilla-extract/css";
+import {
+  style,
+  keyframes,
+  styleVariants,
+  createVar,
+} from "@vanilla-extract/css";
 import { colors } from "@/themes/colors";
 
 const rotate = keyframes({
@@ -7,10 +12,15 @@ const rotate = keyframes({
   },
 });
 
+const spinnerBorderColorVar = createVar();
+
 export const spinner = style({
-  border: `2.6px solid ${colors.lightGray}`,
+  border: `2.6px solid ${spinnerBorderColorVar}`,
   borderRadius: "50%",
   position: "relative",
+  vars: {
+    [spinnerBorderColorVar]: colors.lightGray,
+  },
 });
 
 const spinnerAfterBase = {
@@ -27,6 +37,9 @@ const spinnerAfterBase = {
 
 export const spinnerColor = styleVariants({
   black: {
+    vars: {
+      [spinnerBorderColorVar]: colors.lightGray,
+    },
     selectors: {
       "&::after": {
         ...spinnerAfterBase,
@@ -35,6 +48,9 @@ export const spinnerColor = styleVariants({
     },
   },
   white: {
+    vars: {
+      [spinnerBorderColorVar]: colors.darkModeWhite,
+    },
     selectors: {
       "&::after": {
         ...spinnerAfterBase,
