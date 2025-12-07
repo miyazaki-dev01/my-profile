@@ -1,12 +1,6 @@
-import { PATH } from "./paths";
+import { PAGES, type PageKey } from "./pages";
 
-export type NavPattern =
-  | "profile"
-  | "portfolio"
-  | "blog"
-  | "skill"
-  | "career"
-  | "contact";
+export type NavPattern = PageKey;
 
 export interface NavItem {
   label: string;
@@ -15,29 +9,27 @@ export interface NavItem {
 
 export const NAV_ITEM = {
   profile: {
-    label: "PROFILE",
-    path: PATH.profile,
+    label: PAGES.profile.title,
+    path: PAGES.profile.path,
   },
   portfolio: {
-    label: "PORTFOLIO",
-    path: PATH.portfolio,
+    label: PAGES.portfolio.title,
+    path: PAGES.portfolio.path,
   },
   blog: {
-    label: "BLOG",
-    path: PATH.blog,
+    label: PAGES.blog.title,
+    path: PAGES.blog.path,
   },
   skill: {
-    label: "SKILL",
-    path: PATH.skill,
+    label: PAGES.skill.title,
+    path: PAGES.skill.path,
   },
   career: {
-    label: "CAREER",
-    path: PATH.career,
+    label: PAGES.career.title,
+    path: PAGES.career.path,
   },
   contact: {
-    label: "CONTACT",
-    path: PATH.contact,
+    label: PAGES.contact.title,
+    path: PAGES.contact.path,
   },
-} as const satisfies {
-  [key in NavPattern]: NavItem;
-};
+} as const satisfies Record<NavPattern, NavItem>;

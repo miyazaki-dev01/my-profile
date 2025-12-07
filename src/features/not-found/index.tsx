@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Logo } from "@/components/elements/Logo";
-import { PATH } from "@/constants/paths";
+import { PAGES } from "@/constants/pages";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
 export function NotFoundPage() {
   return (
     <>
-      <Link href={PATH.profile} className={styles.brandLogoLink}>
+      <Link href={PAGES.profile.path} className={styles.brandLogoLink}>
         <Logo style="notFoundHeader" fill="white" />
       </Link>
 
@@ -20,7 +20,7 @@ export function NotFoundPage() {
             <p className={styles.notFoundMessage}>
               お探しのページは見つかりませんでした
             </p>
-            <Link href={PATH.profile} className={styles.notFoundButton}>
+            <Link href={PAGES.profile.path} className={styles.notFoundButton}>
               <span>トップページへ</span>
             </Link>
           </div>

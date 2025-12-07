@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Logo } from "@/components/elements/Logo";
 import { SideNavSection } from "@/components/layouts/Navigation/DesktopSideNav/SideNavSection";
 import { SideNavItem } from "@/components/layouts/Navigation/DesktopSideNav/SideNavItem";
-import { PATH } from "@/constants/paths";
+import { PAGES } from "@/constants/pages";
 import { NAV_ITEM } from "@/constants/nav";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
@@ -12,7 +12,7 @@ export function DesktopSideNav() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
-        <Link href={PATH.profile} className={styles.sidebarLogo}>
+        <Link href={PAGES.profile.path} className={styles.sidebarLogo}>
           <Logo style="sideNav" fill="black" skeleton fadeIn />
         </Link>
 

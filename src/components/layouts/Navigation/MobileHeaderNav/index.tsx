@@ -7,7 +7,7 @@ import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { FadeIn } from "@/components/elements/FadeIn";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { Logo } from "@/components/elements/Logo";
-import { PATH } from "@/constants/paths";
+import { PAGES } from "@/constants/pages";
 import { NAV_ITEM } from "@/constants/nav";
 import { HeaderNavSection } from "@/components/layouts/Navigation/MobileHeaderNav/HeaderNavSection";
 import { HeaderNavItem } from "@/components/layouts/Navigation/MobileHeaderNav/HeaderNavItem";
@@ -39,7 +39,7 @@ export function MobileHeaderNav() {
       >
         <div>
           {!menuOpen && (
-            <Link href={PATH.profile}>
+            <Link href={PAGES.profile.path}>
               <Logo style="headerNav" fill="black" />
             </Link>
           )}
