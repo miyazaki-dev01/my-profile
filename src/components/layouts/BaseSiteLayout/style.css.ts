@@ -37,8 +37,5 @@ export const footer = style({
       padding: "0 0 0 40px",
       height: "60px",
     },
-    [pcMedia]: {
-      display: "none",
-    },
   },
 });
