@@ -2,7 +2,7 @@ import { Barlow_Condensed, Roboto } from "next/font/google";
 
 export const barlow = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["500", "600"],
   variable: "--font-barlow",
   display: "swap",
   fallback: ["system-ui"],
