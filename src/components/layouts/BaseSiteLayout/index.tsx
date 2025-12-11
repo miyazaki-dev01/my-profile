@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import { Navigation } from "@/components/layouts/Navigation";
 import { useContentLoadingContext } from "@/contexts/ContentLoadingContext";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
@@ -14,6 +15,7 @@ type Props = {
 };
 
 export function BaseSiteLayout({ children }: Props) {
+  const pathname = usePathname();
   const { isContentLoading } = useContentLoadingContext();
   const isDesktop = useIsDesktop();
 
@@ -21,7 +23,7 @@ export function BaseSiteLayout({ children }: Props) {
     <>
       <Navigation />
 
-      <FadeIn key={isContentLoading ? "loading" : "loaded"}>
+      <FadeIn key={`${pathname}:${isContentLoading}`}>
         {isContentLoading ? (
           <LoadingScreen spinnerSize={32} />
         ) : (
