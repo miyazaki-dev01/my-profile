@@ -50,6 +50,10 @@ export const imageWrapper = style({
   },
 });
 
+export const profileImage = style({
+  objectFit: "contain",
+});
+
 export const contentColumn = style({
   width: "100%",
   marginTop: "32px",

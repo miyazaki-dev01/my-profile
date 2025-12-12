@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import type { ProfileData } from "@/features/profile/types/profileData";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";
+import { FallbackImage } from "@/components/elements/FallbackImage";
 import { ExternalLink } from "@/components/elements/ExternalLink";
 import { Icon } from "@/components/elements/Icon";
 import { URL } from "@/constants/urls";
@@ -24,7 +24,13 @@ export function ProfilePage({ profileData }: ProfilePageProps) {
         {/* プロフィール画像 */}
         <div className={styles.imageColumn}>
           <div className={styles.imageWrapper}>
-            <Image src={profileImage.url} alt="" fill sizes="100vw" priority />
+            <FallbackImage
+              src={profileImage.url}
+              fallbackSrc="default_profile"
+              sizes="100vw"
+              priority
+              className={styles.profileImage}
+            />
           </div>
         </div>
 
