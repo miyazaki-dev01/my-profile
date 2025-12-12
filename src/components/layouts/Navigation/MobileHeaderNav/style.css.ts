@@ -14,8 +14,8 @@ export const headerBase = style({
   justifyContent: "space-between",
   height: "60px",
   width: "100%",
-  paddingLeft: "24px",
-  paddingRight: "16px",
+  paddingLeft: "1.5rem",
+  paddingRight: "1rem",
   backgroundColor: colors.headerNavBackground,
   backdropFilter: "blur(10px)",
   WebkitBackdropFilter: "blur(10px)",
@@ -31,26 +31,26 @@ export const menuButton = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "32px",
-  height: "32px",
+  width: "2rem",
+  height: "2rem",
   cursor: "pointer",
 });
 
 export const menuIconStack = style({
   display: "flex",
   flexDirection: "column",
-  gap: "4px",
+  gap: ".25rem",
 });
 
 export const bar = style({
-  width: "20px",
-  height: "2px",
+  width: "1.25rem",
+  height: ".125rem",
   background: colors.black,
 });
 
 export const transformable = style({
   transition: `transform 0.3s ${easing}, background-color 0.3s ${easing}`,
-  vars: { [tyVar]: "0px", [rotVar]: "0deg" },
+  vars: { [tyVar]: "0", [rotVar]: "0deg" },
   transform: `translateY(${tyVar}) rotate(${rotVar})`,
 });
 
@@ -61,7 +61,7 @@ export const fadeable = style({
 
 export const openTop = style({
   backgroundColor: colors.white,
-  vars: { [tyVar]: "6px", [rotVar]: "45deg" },
+  vars: { [tyVar]: "0.375rem", [rotVar]: "45deg" },
 });
 
 export const openMiddle = style({
@@ -71,7 +71,7 @@ export const openMiddle = style({
 
 export const openBottom = style({
   backgroundColor: colors.white,
-  vars: { [tyVar]: "-6px", [rotVar]: "-45deg" },
+  vars: { [tyVar]: "-0.375rem", [rotVar]: "-45deg" },
 });
 
 export const overlay = style({
@@ -113,8 +113,8 @@ export const nav = style({
   color: colors.black,
   paddingTop: "84px",
   paddingBottom: "60px",
-  paddingLeft: "48px",
-  gap: "100px",
+  paddingLeft: "3rem",
+  gap: "6.25rem",
   transition: "color 0.5s ease-in-out",
 });
 
@@ -125,5 +125,5 @@ export const navOpen = style({
 export const headerSectionWrapper = style({
   display: "flex",
   flexDirection: "column",
-  gap: "60px",
+  gap: "3.75rem",
 });

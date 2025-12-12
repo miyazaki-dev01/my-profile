@@ -7,5 +7,5 @@ export const headerNavSection = style({
   fontWeight: 500,
   lineHeight: 1,
   letterSpacing: 0,
-  gap: "30px",
+  gap: "1.875rem",
 });

@@ -16,17 +16,17 @@ export const copyrightVariant = styleVariants({
     copyrightBase,
     {
       color: colors.darkGray,
-      marginTop: "40px",
+      marginTop: "2.5rem",
     },
   ],
   mobileFooter: [
     copyrightBase,
     {
       color: colors.darkGray,
-      marginTop: "10px",
+      marginTop: "0.625rem",
       "@media": {
         [tbMedia]: {
-          marginTop: "0px",
+          marginTop: 0,
         },
       },
     },

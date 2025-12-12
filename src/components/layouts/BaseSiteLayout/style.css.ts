@@ -6,19 +6,19 @@ const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
 
 export const main = style({
   flexGrow: 1,
-  paddingInline: "24px",
+  paddingInline: "1.5rem",
   paddingBottom: "60px",
   marginTop: "60px",
   "@media": {
     [tbMedia]: {
-      paddingInline: "64px",
-      paddingBottom: "80px",
-      marginTop: "96px",
+      paddingInline: "4rem",
+      paddingBottom: "5rem",
+      marginTop: "6rem",
     },
     [pcMedia]: {
-      paddingInline: "64px",
-      paddingBottom: "80px",
-      marginTop: "80px",
+      paddingInline: "4rem",
+      paddingBottom: "5rem",
+      marginTop: "5rem",
       marginLeft: "260px",
     },
   },
@@ -27,14 +27,14 @@ export const main = style({
 export const footer = style({
   display: "flex",
   flexDirection: "column",
-  padding: "20px 0 24px 24px",
+  padding: "1.25rem 0 1.5rem 1.5rem",
   flexShrink: 0,
   zIndex: 40,
   "@media": {
     [tbMedia]: {
       flexDirection: "row",
       alignItems: "center",
-      padding: "0 0 0 40px",
+      padding: "0 0 0 2.5rem",
       height: "60px",
     },
   },

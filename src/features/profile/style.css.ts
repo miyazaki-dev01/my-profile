@@ -6,7 +6,7 @@ const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 
 export const root = style({
   marginInline: "auto",
-  marginTop: "16px",
+  marginTop: "1rem",
   width: "100%",
   maxWidth: "1052px",
   "@media": {
@@ -17,18 +17,18 @@ export const root = style({
 });
 
 export const layout = style({
-  marginTop: "32px",
+  marginTop: "2rem",
   width: "100%",
   "@media": {
     [tbMedia]: {
       display: "flex",
-      marginTop: "48px",
+      marginTop: "3rem",
     },
   },
 });
 
 export const imageColumn = style({
-  marginInline: "-24px",
+  marginInline: "-1.5rem",
   width: "100vw",
   "@media": {
     [tbMedia]: {
@@ -45,7 +45,7 @@ export const imageWrapper = style({
   "@media": {
     [tbMedia]: {
       position: "sticky",
-      top: "64px",
+      top: "4rem",
     },
   },
 });
@@ -56,12 +56,12 @@ export const profileImage = style({
 
 export const contentColumn = style({
   width: "100%",
-  marginTop: "32px",
+  marginTop: "2rem",
   "@media": {
     [tbMedia]: {
       flex: 1,
-      marginTop: "0px",
-      marginLeft: "80px",
+      marginTop: 0,
+      marginLeft: "5rem",
     },
   },
 });
@@ -69,12 +69,12 @@ export const contentColumn = style({
 export const content = style({
   display: "flex",
   flexDirection: "column",
-  paddingBottom: "32px",
+  paddingBottom: "2rem",
   borderBottom: `0.5px solid ${colors.lightGray}`,
-  gap: "32px",
+  gap: "2rem",
   "@media": {
     [tbMedia]: {
-      paddingBottom: "48px",
+      paddingBottom: "3rem",
     },
   },
 });
@@ -90,14 +90,14 @@ export const jobCategory = style({
 export const contentBlock = style({
   display: "flex",
   flexDirection: "column",
-  gap: "12px",
+  gap: ".75rem",
 });
 
 export const nameEn = style({
   fontSize: "24px",
   fontWeight: 600,
   lineHeight: 1,
-  letterSpacing: "0.6px",
+  letterSpacing: ".025em",
 });
 
 export const nameJa = style({
@@ -111,7 +111,7 @@ export const nameJa = style({
 export const selfIntroduction = style({
   display: "flex",
   flexDirection: "column",
-  gap: "12px",
+  gap: ".75rem",
   whiteSpace: "pre-line",
   fontFamily: "var(--font-roboto)",
   fontSize: "14px",
@@ -120,14 +120,9 @@ export const selfIntroduction = style({
 });
 
 export const externalLinkContainer = style({
-  marginTop: "32px",
+  marginTop: "2rem",
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  gap: "18px",
-  "@media": {
-    [tbMedia]: {
-      paddingBottom: "48px",
-    },
-  },
+  gap: "1.125rem",
 });

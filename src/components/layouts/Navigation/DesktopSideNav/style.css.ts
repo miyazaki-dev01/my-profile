@@ -8,7 +8,7 @@ export const sidebar = style({
   height: "100%",
   width: "260px",
   zIndex: 50,
-  padding: "64px 0px 40px 40px",
+  padding: "4rem 0 2.5rem 2.5rem",
   overflowY: "auto",
   scrollbarWidth: "none",
   backgroundColor: colors.sideNavBackground,
@@ -20,8 +20,8 @@ export const sidebarInner = style({
   display: "flex",
   flexDirection: "column",
   minHeight: "100%",
-  paddingRight: "40px",
-  borderRight: `0.5px solid ${colors.lightGray}`,
+  paddingRight: "2.5rem",
+  borderRight: `.5px solid ${colors.lightGray}`,
 });
 
 export const sidebarLogo = style({
@@ -33,14 +33,14 @@ export const sidebarNav = style({
   flexDirection: "column",
   justifyContent: "space-between",
   flexGrow: 1,
-  marginTop: "64px",
-  gap: "60px",
+  marginTop: "4rem",
+  gap: "3.75rem",
 });
 
 export const sidebarSectionWrapper = style({
   display: "flex",
   flexDirection: "column",
-  gap: "60px",
+  gap: "3.75rem",
 });
 
 export const sidebarCopyright = style({
@@ -49,5 +49,5 @@ export const sidebarCopyright = style({
   fontWeight: 500,
   lineHeight: 1,
   letterSpacing: 0,
-  marginTop: "40px",
+  marginTop: "2.5rem",
 });
