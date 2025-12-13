@@ -40,6 +40,12 @@ export function useScrollRestoration({ isPageLoading }: Props) {
     currentAsPathRef.current = asPath;
   }, [asPath]);
 
+  const lastAsPathRef = useRef(asPath);
+  useEffect(() => {
+    // 画面が切り替わったら「今のページ」を last として更新
+    lastAsPathRef.current = asPath;
+  }, [asPath]);
+
   const persistScrollFor = useCallback((asPathToSave: string) => {
     const saveKey = `${KEY_PREFIX}${asPathToSave}`;
     const existed = sessionStorage.getItem(saveKey);
@@ -82,21 +88,37 @@ export function useScrollRestoration({ isPageLoading }: Props) {
 
     const origPushState = window.history.pushState;
     const origReplaceState = window.history.replaceState;
-    const saveBeforeNavigate = () => {
-      persistScrollFor(currentAsPathRef.current);
+
+    const getLocationAsPath = () =>
+      window.location.pathname + window.location.search;
+
+    const saveFromPage = () => {
+      persistScrollFor(lastAsPathRef.current);
     };
 
     window.history.pushState = function (...args) {
-      saveBeforeNavigate();
-      return origPushState.apply(this, args as any);
+      saveFromPage();
+
+      const ret = origPushState.apply(this, args as any);
+
+      lastAsPathRef.current = getLocationAsPath();
+      return ret;
     };
 
     window.history.replaceState = function (...args) {
-      saveBeforeNavigate();
-      return origReplaceState.apply(this, args as any);
+      saveFromPage();
+
+      const ret = origReplaceState.apply(this, args as any);
+
+      lastAsPathRef.current = getLocationAsPath();
+      return ret;
     };
 
-    const onPopState = () => saveBeforeNavigate();
+    const onPopState = () => {
+      saveFromPage();
+      lastAsPathRef.current = getLocationAsPath();
+    };
+
     window.addEventListener("popstate", onPopState);
 
     return () => {
