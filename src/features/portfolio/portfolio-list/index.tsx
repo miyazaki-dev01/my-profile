@@ -1,5 +1,5 @@
 import React from "react";
-import type { PortfolioList } from "@/features/portfolio/portfolio-list/types/portfolioListData";
+import type { PortfolioList } from "@/features/portfolio/portfolio-list/types/portfolioList";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";
 import { PortfolioCard } from "@/features/portfolio/portfolio-list/components/PortfolioCard";

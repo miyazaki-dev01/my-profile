@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import type { PortfolioListItem } from "@/features/portfolio/portfolio-list/types/portfolioListData";
+import type { PortfolioListItem } from "@/features/portfolio/portfolio-list/types/portfolioList";
 import { PATH } from "@/constants/paths";
 import { FallbackImage } from "@/components/elements/FallbackImage";
 import * as styles from "./style.css";
