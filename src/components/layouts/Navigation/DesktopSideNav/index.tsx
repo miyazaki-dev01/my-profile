@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { NavLink } from "@/components/elements/NavLink";
 import { Logo } from "@/components/elements/Logo";
 import { SideNavSection } from "@/components/layouts/Navigation/DesktopSideNav/SideNavSection";
 import { SideNavItem } from "@/components/layouts/Navigation/DesktopSideNav/SideNavItem";
@@ -12,9 +12,9 @@ export function DesktopSideNav() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
-        <Link href={PAGES.profile.path} className={styles.sidebarLogo}>
+        <NavLink href={PAGES.profile.path} className={styles.sidebarLogo}>
           <Logo style="sideNav" fill="black" skeleton fadeIn />
-        </Link>
+        </NavLink>
 
         <nav className={styles.sidebarNav}>
           <div className={styles.sidebarSectionWrapper}>

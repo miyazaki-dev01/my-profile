@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { NavLink } from "@/components/elements/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import * as styles from "./style.css";
 
@@ -21,9 +21,9 @@ export function SideNavItem({ href, label }: Props) {
           style={{ width: `${Math.max(label.length, 3)}ch` }}
         />
       ) : (
-        <Link href={href} className={styles.linkFadeIn}>
+        <NavLink href={href} className={styles.linkFadeIn}>
           {label}
-        </Link>
+        </NavLink>
       )}
     </li>
   );

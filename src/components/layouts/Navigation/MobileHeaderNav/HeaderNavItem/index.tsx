@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { NavLink } from "@/components/elements/NavLink";
 
 type Props = {
   href: string;
@@ -10,9 +10,9 @@ type Props = {
 export function HeaderNavItem({ href, label, onClick }: Props) {
   return (
     <li>
-      <Link href={href} onClick={onClick}>
+      <NavLink href={href} onClick={onClick}>
         {label}
-      </Link>
+      </NavLink>
     </li>
   );
 }

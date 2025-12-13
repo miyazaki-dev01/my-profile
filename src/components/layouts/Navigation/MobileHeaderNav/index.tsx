@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { NavLink } from "@/components/elements/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { FadeIn } from "@/components/elements/FadeIn";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
@@ -39,9 +39,9 @@ export function MobileHeaderNav() {
       >
         <div>
           {!menuOpen && (
-            <Link href={PAGES.profile.path}>
+            <NavLink href={PAGES.profile.path}>
               <Logo style="headerNav" fill="black" />
-            </Link>
+            </NavLink>
           )}
         </div>
         <div
