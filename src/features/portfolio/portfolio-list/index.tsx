@@ -5,13 +5,13 @@ import { PAGES } from "@/constants/pages";
 import { PortfolioCard } from "@/features/portfolio/portfolio-list/components/PortfolioCard";
 import * as styles from "./style.css";
 
-type PortfolioListPageProps = {
+type Props = {
   portfolioListData: PortfolioList;
 };
 
 export function PortfolioListPage({
   portfolioListData: { portfolioList },
-}: PortfolioListPageProps) {
+}: Props) {
   return (
     <div className={styles.root}>
       <PageTitle>{PAGES.portfolio.title}</PageTitle>

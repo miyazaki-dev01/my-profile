@@ -3,11 +3,11 @@ import "@/styles/globals.css";
 import { barlow, roboto } from "@/libs/fonts";
 import { InitialLoadingProvider } from "@/providers/InitialLoadingProvider";
 
-type RootLayoutProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja" className={`${barlow.variable} ${roboto.variable}`}>
       <body>

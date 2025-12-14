@@ -8,11 +8,11 @@ import { Icon } from "@/components/elements/Icon";
 import { URL } from "@/constants/urls";
 import * as styles from "./style.css";
 
-type ProfilePageProps = {
+type Props = {
   profileData: ProfileData;
 };
 
-export function ProfilePage({ profileData }: ProfilePageProps) {
+export function ProfilePage({ profileData }: Props) {
   const { profileImage, jobCategory, nameEn, nameJa, selfIntroduction } =
     profileData;
 
