@@ -25,6 +25,7 @@ export function ProfilePage({ profileData }: Props) {
         <div className={styles.imageColumn}>
           <div className={styles.imageWrapper}>
             <FallbackImage
+              tag="Image"
               src={profileImage.url}
               fallbackSrc="default_profile"
               sizes="100vw"
