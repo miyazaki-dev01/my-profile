@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "@/components/elements/NavLink";
+import { NavLink } from "@/components/elements/Link/NavLink";
 
 type Props = {
   href: string;

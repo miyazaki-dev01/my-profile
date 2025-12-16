@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { NavLink } from "@/components/elements/NavLink";
+import { NavLink } from "@/components/elements/Link/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { FadeIn } from "@/components/elements/FadeIn";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";

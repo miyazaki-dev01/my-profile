@@ -3,7 +3,7 @@ import type { ProfileData } from "@/features/profile/types/profileData";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";
 import { FallbackImage } from "@/components/elements/FallbackImage";
-import { ExternalLink } from "@/components/elements/ExternalLink";
+import { ExternalLink } from "@/components/elements/Link/ExternalLink";
 import { Icon } from "@/components/elements/Icon";
 import { URL } from "@/constants/urls";
 import * as styles from "./style.css";

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { NavLink } from "@/components/elements/NavLink";
+import { NavLink } from "@/components/elements/Link/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import * as styles from "./style.css";
 
