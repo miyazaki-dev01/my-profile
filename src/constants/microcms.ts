@@ -4,6 +4,8 @@ export const MICROCMS_ENDPOINT = {
   blog: "blog",
   skill: "skill",
   career: "career",
-} as const;
+} as const satisfies {
+  [key: string]: string;
+};
 
 export type MicrocmsEndpointKey = keyof typeof MICROCMS_ENDPOINT;
