@@ -24,11 +24,9 @@ export function BaseSiteLayout({ children }: Props) {
       <Navigation />
 
       <FadeIn key={`${pathname}:${isContentLoading}`}>
-        {isContentLoading ? (
-          <LoadingScreen spinnerSize={32} />
-        ) : (
-          <main className={styles.main}>{children}</main>
-        )}
+        <main className={styles.main}>
+          {isContentLoading ? <LoadingScreen spinnerSize={32} /> : children}
+        </main>
       </FadeIn>
 
       {!isDesktop && (
