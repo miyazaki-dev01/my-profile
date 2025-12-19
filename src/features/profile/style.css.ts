@@ -71,17 +71,17 @@ export const content = style({
   flexDirection: "column",
   paddingBottom: "2rem",
   borderBottom: `0.5px solid ${colors.lightGray}`,
-  gap: "2rem",
+  gap: "3rem",
   "@media": {
     [tbMedia]: {
-      paddingBottom: "3rem",
+      paddingBottom: "2.5rem",
     },
   },
 });
 
 export const jobCategory = style({
   color: colors.darkGray,
-  fontSize: "15px",
+  fontSize: "16px",
   fontWeight: 500,
   lineHeight: 1,
   letterSpacing: 0,
@@ -94,7 +94,7 @@ export const contentBlock = style({
 });
 
 export const nameEn = style({
-  fontSize: "24px",
+  fontSize: "28px",
   fontWeight: 600,
   lineHeight: 1,
   letterSpacing: ".025em",
@@ -111,12 +111,12 @@ export const nameJa = style({
 export const selfIntroduction = style({
   display: "flex",
   flexDirection: "column",
-  gap: ".75rem",
+  gap: "1rem",
   whiteSpace: "pre-line",
   fontFamily: "var(--font-roboto)",
-  fontSize: "14px",
+  fontSize: "15px",
   letterSpacing: 0,
-  lineHeight: 1.3,
+  lineHeight: 1.5,
 });
 
 export const externalLinkContainer = style({
@@ -125,4 +125,9 @@ export const externalLinkContainer = style({
   flexDirection: "row",
   alignItems: "center",
   gap: "1.125rem",
+  "@media": {
+    [tbMedia]: {
+      marginTop: "2.5rem",
+    },
+  },
 });
