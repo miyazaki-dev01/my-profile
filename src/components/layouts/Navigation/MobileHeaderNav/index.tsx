@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { NavLink } from "@/components/elements/Link/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { FadeIn } from "@/components/elements/FadeIn";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { Logo } from "@/components/elements/Logo";
@@ -18,18 +19,7 @@ export function MobileHeaderNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // スクロールロック
-  useEffect(() => {
-    const body = document.body;
-    if (menuOpen) {
-      body.style.overflow = "hidden";
-    } else {
-      body.style.overflow = "";
-    }
-
-    return () => {
-      body.style.overflow = "";
-    };
-  }, [menuOpen]);
+  useBodyScrollLock(menuOpen);
 
   return (
     <>
