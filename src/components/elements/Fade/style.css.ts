@@ -1,7 +1,8 @@
 import { style } from "@vanilla-extract/css";
 
 const base = style({
-  transition: "opacity 0.6s ease-in-out",
+  transitionProperty: "opacity",
+  transitionTimingFunction: "ease-in-out",
 });
 
 export const visible = style([

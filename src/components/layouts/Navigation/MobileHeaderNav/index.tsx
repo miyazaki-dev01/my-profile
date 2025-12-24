@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "@/components/elements/Link/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
-import { FadeIn } from "@/components/elements/FadeIn";
+import { Fade } from "@/components/elements/Fade";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { Logo } from "@/components/elements/Logo";
 import { PAGES } from "@/constants/pages";
@@ -63,10 +63,10 @@ export function MobileHeaderNav() {
         className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ""}`}
       >
         <div className={`${styles.panel} ${menuOpen ? styles.panelOpen : ""}`}>
-          <FadeIn key={isInitialLoading ? "loading" : "loaded"}>
-            {isInitialLoading ? (
-              <LoadingScreen spinnerSize={26} spinnerColor="white" />
-            ) : (
+          {isInitialLoading ? (
+            <LoadingScreen spinnerSize={26} spinnerColor="white" />
+          ) : (
+            <Fade key={isInitialLoading ? "loading" : "loaded"}>
               <nav
                 className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}
               >
@@ -111,8 +111,8 @@ export function MobileHeaderNav() {
                   />
                 </HeaderNavSection>
               </nav>
-            )}
-          </FadeIn>
+            </Fade>
+          )}
         </div>
       </div>
     </>

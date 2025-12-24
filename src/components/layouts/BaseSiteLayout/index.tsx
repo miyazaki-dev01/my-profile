@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Navigation } from "@/components/layouts/Navigation";
 import { useContentLoadingContext } from "@/contexts/ContentLoadingContext";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
-import { FadeIn } from "@/components/elements/FadeIn";
+import { Fade } from "@/components/elements/Fade";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
@@ -23,11 +23,15 @@ export function BaseSiteLayout({ children }: Props) {
     <>
       <Navigation />
 
-      <FadeIn key={`${pathname}:${isContentLoading}`}>
+      {isContentLoading ? (
         <main className={styles.main}>
-          {isContentLoading ? <LoadingScreen spinnerSize={32} /> : children}
+          <LoadingScreen spinnerSize={isDesktop ? 32 : 26} />
         </main>
-      </FadeIn>
+      ) : (
+        <Fade key={pathname}>
+          <main className={styles.main}>{children}</main>
+        </Fade>
+      )}
 
       {!isDesktop && (
         <footer className={styles.footer}>
