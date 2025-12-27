@@ -11,6 +11,7 @@ export type OgpData = {
   ogDescription?: string;
   ogUrl?: string;
   ogImage?: OgpImage | OgpImage[];
+  favicon?: string;
 };
 
 export type OgpDataByUrl = Record<string, OgpData>;

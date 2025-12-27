@@ -9,6 +9,9 @@ const host = (u: string) => {
   }
 };
 
+const pickString = (v: unknown): string | undefined =>
+  typeof v === "string" ? v : undefined;
+
 export async function fetchOgp(url: string): Promise<OgpData> {
   try {
     const { error, result } = await ogs({
@@ -19,10 +22,12 @@ export async function fetchOgp(url: string): Promise<OgpData> {
     if (!error && result) {
       const r = result as Record<string, unknown>;
       return {
-        ogTitle: r.ogTitle as string | undefined,
-        ogDescription: r.ogDescription as string | undefined,
+        ogTitle: typeof r.ogTitle === "string" ? r.ogTitle : undefined,
+        ogDescription:
+          typeof r.ogDescription === "string" ? r.ogDescription : undefined,
         ogImage: r.ogImage as OgpData["ogImage"],
-        ogUrl: (r.ogUrl as string | undefined) ?? url,
+        ogUrl: (typeof r.ogUrl === "string" ? r.ogUrl : undefined) ?? url,
+        favicon: pickString(r.favicon),
       };
     }
   } catch {
@@ -34,5 +39,6 @@ export async function fetchOgp(url: string): Promise<OgpData> {
     ogDescription: "",
     ogImage: undefined,
     ogUrl: url,
+    favicon: undefined,
   };
 }

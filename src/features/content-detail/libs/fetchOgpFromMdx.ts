@@ -13,6 +13,7 @@ const fallback = (url: string) => ({
   ogDescription: "",
 });
 
+// https のみ取得対象にする（https以外 / 不正URLは fetch しない）
 const toHttpsUrlOrNull = (input: string): string | null => {
   try {
     const u = new URL(input);
@@ -34,11 +35,11 @@ const toHttpsUrlOrNull = (input: string): string | null => {
 export async function fetchOgpByUrlFromMdx(
   mdxText: string
 ): Promise<{ ogpDataByUrl: OgpDataByUrl }> {
-  const regex = /(?<!\\)<OgpCard\s+url="([^"]+)"\s*\/?>/g;
+  const regex = /(?<!\\)<MdxOgpCard\s+url="([^"]+)"\s*\/?>/g;
   const uniqueUrls = new Set<string>();
 
   for (const match of mdxText.matchAll(regex)) {
-    uniqueUrls.add(match[1]);
+    uniqueUrls.add(match[1].trim());
   }
 
   if (uniqueUrls.size === 0) {
@@ -48,7 +49,6 @@ export async function fetchOgpByUrlFromMdx(
   const ogpDataByUrl: OgpDataByUrl = {};
   const validUrls: string[] = [];
 
-  // https のみ取得対象にする（https以外 / 不正URLは fetch しない）
   for (const raw of uniqueUrls) {
     const httpsUrl = toHttpsUrlOrNull(raw);
     if (httpsUrl) {
