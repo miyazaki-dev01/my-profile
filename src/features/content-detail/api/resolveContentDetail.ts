@@ -1,4 +1,4 @@
-import type { ContentDetailBase } from "@/features/content-detail/types/ContentDetailBase";
+import type { ContentDetailBase } from "@/features/content-detail/types/contentDetailBase";
 import { cookieNames, type ContentType } from "@/config/previewCookies";
 import type { OgpDataByUrl } from "@/features/content-detail/types/ogp";
 import { fetchOgpByUrlFromMdx } from "@/features/content-detail/libs/fetchOgpFromMdx";

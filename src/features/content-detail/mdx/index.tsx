@@ -1,6 +1,6 @@
 import React from "react";
 import type { MDXComponents } from "next-mdx-remote-client/rsc";
-import type { PortfolioDetail } from "@/features/portfolio/portfolio-detail/types/portfolioDetail";
+import type { ContentDetailImage } from "@/features/content-detail/types/contentDetailImage";
 import type { OgpDataByUrl } from "@/features/content-detail/types/ogp";
 import { ExternalLink } from "@/components/elements/Link/ExternalLink";
 import { MdxIndexedImage } from "@/features/content-detail/mdx/components/MdxIndexedImage";
@@ -18,7 +18,7 @@ type CodeBlockProps = React.HTMLAttributes<HTMLElement> & {
 };
 
 export function createMdxComponents(
-  images: PortfolioDetail["images"],
+  images: ContentDetailImage[],
   ogpDataByUrl: OgpDataByUrl
 ): MDXComponents {
   return {

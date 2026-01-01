@@ -1,12 +1,13 @@
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import type { PortfolioDetail } from "@/features/portfolio/portfolio-detail/types/portfolioDetail";
+import type { ContentDetailBase } from "@/features/content-detail/types/contentDetailBase";
+import type { ContentDetailImage } from "@/features/content-detail/types/contentDetailImage";
 import type { OgpDataByUrl } from "@/features/content-detail/types/ogp";
 import { createMdxComponents } from "@/features/content-detail/mdx";
 import { mdxOptions } from "@/features/content-detail/mdx/libs/mdxOptions";
 
 type Props = {
-  body: PortfolioDetail["body"];
-  images: PortfolioDetail["images"];
+  body: ContentDetailBase["body"];
+  images: ContentDetailImage[];
   ogpData: OgpDataByUrl;
 };
 
