@@ -9,7 +9,7 @@ export const button = style({
   position: "fixed",
   right: "24px",
   bottom: "24px",
-  zIndex: 100,
+  zIndex: 50,
   width: "40px",
   height: "40px",
   borderRadius: "9999px",
