@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import type { ContentDetailImage } from "@/features/content-detail/types/contentDetailImage";
+import type { ContentDetailBase } from "@/features/content-detail/types/contentDetailBase";
 import { useImageModal } from "@/features/content-detail/mdx/components/ImageModal/useImageModal";
 import { ImageModal } from "@/features/content-detail/mdx/components/ImageModal";
 import * as styles from "./style.css";
 
 type Props = {
   idx: number;
-  images: ContentDetailImage[];
+  images: ContentDetailBase["images"];
 };
 
 /**
