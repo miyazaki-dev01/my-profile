@@ -25,7 +25,7 @@ export function BaseSiteLayout({ children }: Props) {
 
       {isContentLoading ? (
         <main className={styles.main}>
-          <LoadingScreen spinnerSize={isDesktop ? 32 : 26} />
+          <LoadingScreen spinnerSize={32} />
         </main>
       ) : (
         <Fade key={pathname}>
