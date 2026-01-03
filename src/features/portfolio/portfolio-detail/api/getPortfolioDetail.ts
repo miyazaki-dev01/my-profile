@@ -7,6 +7,7 @@ import type {
 
 const endpoint = MICROCMS_ENDPOINT.portfolio;
 
+// ポートフォリオの全スラッグを取得する
 export async function getPortfolioSlugs(): Promise<string[]> {
   const slugs = await microcmsClient.getAllContents<PortfolioListSlug>({
     endpoint: endpoint,
@@ -15,6 +16,7 @@ export async function getPortfolioSlugs(): Promise<string[]> {
   return slugs.map(({ articleSlug }) => articleSlug);
 }
 
+// 指定されたスラッグのポートフォリオ詳細を取得する
 export async function getPortfolioDetail(
   slug: string
 ): Promise<PortfolioDetail | null> {
@@ -32,6 +34,7 @@ export async function getPortfolioDetail(
   }
 }
 
+// contentId, draftKey を使用し、下書き記事を取得（プレビュー用）
 export async function getPortfolioDraftById(
   contentId: string,
   draftKey: string
