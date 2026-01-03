@@ -23,7 +23,11 @@ export function createMdxComponents(
 ): MDXComponents {
   return {
     // MDX全体のラッパー
-    wrapper: ({ children }) => <div className={styles.mdxRoot}>{children}</div>,
+    wrapper: ({ children }) => (
+      <div id="content-detail" className={styles.mdxRoot}>
+        {children}
+      </div>
+    ),
 
     // 見出し
     h2: (props) => <h2 className={styles.h2} {...props} />,

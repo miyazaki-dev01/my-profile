@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server";
 import { cookieNames, isContentType } from "@/config/previewCookies";
 import { PATH } from "@/constants/paths";
 import { getPortfolioDraftById } from "@/features/portfolio/portfolio-detail/api/getPortfolioDetail";
+import { getBlogDraftById } from "@/features/blog/blog-detail/api/getBlogDetail";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +29,7 @@ const resolvers: Record<string, Resolver<DraftResolvable>> = {
     toPath: (slug) => `${PATH.portfolio}/${slug}`,
   },
   blog: {
-    // TODO: ブログ詳細実装時に getBlogDraftById へ差し替える
-    getById: async () => null,
+    getById: getBlogDraftById,
     toPath: (slug) => `${PATH.blog}/${slug}`,
   },
 };
