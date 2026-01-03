@@ -99,9 +99,10 @@ export const copyWrapper = style({
 });
 
 export const copyBtn = style({
-  padding: "1px 8px",
+  padding: "3px 8px",
   background: colors.black,
   cursor: "pointer",
+  borderRadius: "4px",
 });
 
 export const copyIconStyle = style({

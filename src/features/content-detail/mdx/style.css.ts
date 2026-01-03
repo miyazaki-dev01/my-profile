@@ -3,7 +3,6 @@ import { breakpoints } from "@/themes/breakpoints";
 import { colors } from "@/themes/colors";
 
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
-const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
 
 // ------------------------------
 // ラッパー
