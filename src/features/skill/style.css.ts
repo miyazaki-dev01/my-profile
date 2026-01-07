@@ -1,0 +1,82 @@
+import { style } from "@vanilla-extract/css";
+import { breakpoints } from "@/themes/breakpoints";
+import { colors } from "@/themes/colors";
+
+const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
+const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
+
+export const root = style({
+  display: "flex",
+  flexDirection: "column",
+  maxWidth: "1052px",
+  width: "100%",
+  height: "100%",
+  marginInline: "auto",
+  marginTop: "1rem",
+  "@media": {
+    [tbMedia]: {
+      marginTop: 0,
+    },
+  },
+});
+
+export const pcStickyBlock = style({
+  position: "static",
+  display: "contents",
+
+  "@media": {
+    [pcMedia]: {
+      position: "sticky",
+      display: "block",
+      top: 0,
+      zIndex: 1,
+      marginInline: "-1.5rem",
+      marginTop: "-5rem",
+      width: "calc(100% + 48px)",
+      backgroundColor: colors.white,
+      paddingInline: "1.5rem",
+      paddingTop: "5rem",
+    },
+  },
+});
+
+export const spStickyBlock = style({
+  position: "sticky",
+  top: "60px",
+  marginInline: "-1.5rem",
+  marginTop: "2rem",
+  backgroundColor: colors.headerNavBackground,
+  backdropFilter: "blur(10px)",
+  zIndex: 1,
+
+  "@media": {
+    [tbMedia]: {
+      marginInline: 0,
+      paddingInline: 0,
+    },
+    [pcMedia]: {
+      position: "static",
+      top: "auto",
+      background: "transparent",
+      backdropFilter: "none",
+      zIndex: 0,
+    },
+  },
+});
+
+export const skillList = style({
+  marginTop: "1.5rem",
+
+  "@media": {
+    [tbMedia]: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2,minmax(0,1fr))",
+      gap: "2rem",
+      marginTop: "3rem",
+    },
+    [pcMedia]: {
+      gridTemplateColumns: "repeat(3,minmax(0,1fr))",
+      gap: "1rem",
+    },
+  },
+});
