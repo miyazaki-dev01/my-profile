@@ -6,7 +6,7 @@ const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 const pcMedia = `screen and (min-width: ${breakpoints.desktop}px)`;
 
 export const root = style({
-  maxWidth: "700px",
+  maxWidth: "600px",
   width: "100%",
   marginTop: "1rem",
   marginInline: "auto",
