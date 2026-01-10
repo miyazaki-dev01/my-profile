@@ -4,3 +4,5 @@ export type CareerItem = {
   date: string;
   body?: string;
 };
+
+export type CareerLatestYear = number | null;

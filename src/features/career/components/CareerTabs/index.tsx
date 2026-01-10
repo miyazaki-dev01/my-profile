@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { PATH } from "@/constants/paths";
+import { buildCareerPath } from "@/features/career/utils/careerPath";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";
 import { useWheelToHorizontalScroll } from "@/hooks/useWheelToHorizontalScroll";
 import * as styles from "./style.css";
@@ -34,7 +34,7 @@ export function CareerTabs({ years, activeYear }: Props) {
 
           return (
             <li key={year} className={styles.tabItem}>
-              <Link href={`${PATH.career}?year=${year}`} scroll={false}>
+              <Link href={buildCareerPath(year)} scroll={false}>
                 <p className={styles.tabText({ active: isActive })}>{year}</p>
               </Link>
             </li>

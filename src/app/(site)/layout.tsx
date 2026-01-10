@@ -2,16 +2,21 @@ import React from "react";
 import { ContentLoadingProvider } from "@/providers/ContentLoadingProvider";
 import { ScrollRestoration } from "@/components/elements/ScrollRestoration";
 import { BaseSiteLayout } from "@/components/layouts/BaseSiteLayout";
+import { getLatestCareerYear } from "@/features/career/api/getCareerData";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export default function SiteLayout({ children }: Props) {
+export default async function SiteLayout({ children }: Props) {
+  const careerLatestYear = await getLatestCareerYear();
+
   return (
     <ContentLoadingProvider>
       <ScrollRestoration />
-      <BaseSiteLayout>{children}</BaseSiteLayout>
+      <BaseSiteLayout careerLatestYear={careerLatestYear}>
+        {children}
+      </BaseSiteLayout>
     </ContentLoadingProvider>
   );
 }

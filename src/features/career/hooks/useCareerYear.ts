@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { PATH } from "@/constants/paths";
+import { buildCareerPath } from "@/features/career/utils/careerPath";
 
 const normalizeYear = (rawYear: string | null, years: number[]) => {
   if (years.length === 0) return null;
@@ -30,7 +30,7 @@ export function useCareerYear(years: number[]) {
     if (!activeYear) return;
 
     if (rawYear !== String(activeYear)) {
-      router.replace(`${PATH.career}?year=${activeYear}`, { scroll: false });
+      router.replace(buildCareerPath(activeYear), { scroll: false });
     }
   }, [router, rawYear, activeYear]);
 

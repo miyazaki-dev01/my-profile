@@ -1,14 +1,20 @@
 import React from "react";
+import type { CareerLatestYear } from "@/features/career/types/career";
 import { NavLink } from "@/components/elements/Link/NavLink";
 import { Logo } from "@/components/elements/Logo";
 import { SideNavSection } from "@/components/layouts/Navigation/DesktopSideNav/SideNavSection";
 import { SideNavItem } from "@/components/layouts/Navigation/DesktopSideNav/SideNavItem";
 import { PAGES } from "@/constants/pages";
 import { NAV_ITEM } from "@/constants/nav";
+import { buildCareerPath } from "@/features/career/utils/careerPath";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
-export function DesktopSideNav() {
+type Props = {
+  careerLatestYear?: CareerLatestYear;
+};
+
+export function DesktopSideNav({ careerLatestYear }: Props) {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarInner}>
@@ -40,7 +46,7 @@ export function DesktopSideNav() {
                 label={NAV_ITEM.skill.label}
               />
               <SideNavItem
-                href={NAV_ITEM.career.path}
+                href={buildCareerPath(careerLatestYear)}
                 label={NAV_ITEM.career.label}
               />
             </SideNavSection>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import type { CareerLatestYear } from "@/features/career/types/career";
 import { useState } from "react";
 import { NavLink } from "@/components/elements/Link/NavLink";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
@@ -8,13 +9,17 @@ import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { Fade } from "@/components/elements/Fade";
 import { LoadingScreen } from "@/components/layouts/LoadingScreen";
 import { Logo } from "@/components/elements/Logo";
-import { PAGES } from "@/constants/pages";
 import { NAV_ITEM } from "@/constants/nav";
+import { buildCareerPath } from "@/features/career/utils/careerPath";
 import { HeaderNavSection } from "@/components/layouts/Navigation/MobileHeaderNav/HeaderNavSection";
 import { HeaderNavItem } from "@/components/layouts/Navigation/MobileHeaderNav/HeaderNavItem";
 import * as styles from "./style.css";
 
-export function MobileHeaderNav() {
+type Props = {
+  careerLatestYear?: CareerLatestYear;
+};
+
+export function MobileHeaderNav({ careerLatestYear }: Props) {
   const { isInitialLoading } = useInitialLoadingContext();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,7 +34,7 @@ export function MobileHeaderNav() {
       >
         <div>
           {!menuOpen && (
-            <NavLink href={PAGES.profile.path}>
+            <NavLink href={NAV_ITEM.profile.path}>
               <Logo style="headerNav" fill="black" />
             </NavLink>
           )}
@@ -97,7 +102,7 @@ export function MobileHeaderNav() {
                       onClick={() => setMenuOpen(false)}
                     />
                     <HeaderNavItem
-                      href={NAV_ITEM.career.path}
+                      href={buildCareerPath(careerLatestYear)}
                       label={NAV_ITEM.career.label}
                       onClick={() => setMenuOpen(false)}
                     />
