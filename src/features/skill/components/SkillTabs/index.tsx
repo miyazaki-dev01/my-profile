@@ -6,7 +6,7 @@ import type { SkillCategoryParam } from "@/features/skill/types/skill";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";
 import { useWheelToHorizontalScroll } from "@/hooks/useWheelToHorizontalScroll";
 import { SKILL_TABS } from "@/features/skill/constants/skillTabs";
-import { PATH } from "@/constants/paths";
+import { buildSkillPath } from "@/features/skill/utils/skillPath";
 import * as styles from "./style.css";
 
 type Props = {
@@ -32,7 +32,7 @@ export function SkillTabs({ activeCategory }: Props) {
 
           return (
             <li key={tab.key} className={styles.tabItem}>
-              <Link href={`${PATH.skill}?category=${tab.key}`} scroll={false}>
+              <Link href={buildSkillPath(tab.key)} scroll={false}>
                 <p className={styles.tabText({ active: isActive })}>
                   {tab.label}
                 </p>

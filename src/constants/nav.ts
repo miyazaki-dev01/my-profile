@@ -1,4 +1,5 @@
 import { PAGES, type PageKey } from "./pages";
+import { buildSkillPath } from "@/features/skill/utils/skillPath";
 
 export type NavPattern = PageKey;
 
@@ -22,7 +23,7 @@ export const NAV_ITEM = {
   },
   skill: {
     label: PAGES.skill.title,
-    path: PAGES.skill.path,
+    path: buildSkillPath(),
   },
   career: {
     label: PAGES.career.title,

@@ -4,7 +4,7 @@ import { useEffect, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { SkillCategoryParam } from "@/features/skill/types/skill";
 import { SKILL_TAB_KEYS } from "@/features/skill/constants/skillTabs";
-import { PATH } from "@/constants/paths";
+import { buildSkillPath } from "@/features/skill/utils/skillPath";
 
 const normalizeCategory = (category: string | null): SkillCategoryParam => {
   if (!category) return "all";
@@ -26,7 +26,7 @@ export function useSkillCategory() {
 
   useEffect(() => {
     if (rawCategory !== activeCategory) {
-      router.replace(`${PATH.skill}?category=${activeCategory}`, {
+      router.replace(buildSkillPath(activeCategory), {
         scroll: false,
       });
     }
