@@ -40,7 +40,7 @@ export function NavLink({ href, children, ...rest }: Props) {
   );
 
   return (
-    <Link href={href} {...rest} onClick={handleClick}>
+    <Link href={href} scroll={false} {...rest} onClick={handleClick}>
       {children}
     </Link>
   );

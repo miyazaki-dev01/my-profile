@@ -17,7 +17,7 @@ export function BlogCard({ blogListItem }: Props) {
 
   return (
     <li>
-      <Link href={blogLink}>
+      <Link href={blogLink} scroll={false}>
         <div className={styles.blogCardStyle}>
           <div className={styles.textContainerStyle}>
             <p className={styles.titleStyle}>{title}</p>

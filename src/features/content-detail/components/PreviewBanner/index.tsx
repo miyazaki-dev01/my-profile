@@ -11,7 +11,7 @@ export function PreviewBanner({ type }: Props) {
   return (
     <div className={styles.container}>
       プレビュー表示中
-      <Link href={disableHref} className={styles.link}>
+      <Link href={disableHref} scroll={false} className={styles.link}>
         解除して一覧へ
       </Link>
     </div>

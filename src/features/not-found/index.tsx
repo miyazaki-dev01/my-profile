@@ -7,7 +7,11 @@ import * as styles from "./style.css";
 export function NotFoundPage() {
   return (
     <>
-      <Link href={PAGES.profile.path} className={styles.brandLogoLink}>
+      <Link
+        href={PAGES.profile.path}
+        scroll={false}
+        className={styles.brandLogoLink}
+      >
         <Logo style="notFoundHeader" fill="white" />
       </Link>
 
@@ -20,7 +24,11 @@ export function NotFoundPage() {
             <p className={styles.notFoundMessage}>
               お探しのページは見つかりませんでした
             </p>
-            <Link href={PAGES.profile.path} className={styles.notFoundButton}>
+            <Link
+              href={PAGES.profile.path}
+              scroll={false}
+              className={styles.notFoundButton}
+            >
               <span>トップページへ</span>
             </Link>
           </div>

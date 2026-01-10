@@ -15,7 +15,11 @@ export function PortfolioCard({ portfolioListItem }: Props) {
 
   return (
     <li>
-      <Link href={portfolioLink} className={styles.portfolioCard}>
+      <Link
+        href={portfolioLink}
+        scroll={false}
+        className={styles.portfolioCard}
+      >
         <div className={styles.thumbnailContainer}>
           <FallbackImage
             tag="img"
