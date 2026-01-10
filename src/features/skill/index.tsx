@@ -7,7 +7,7 @@ import { useSkillCategory } from "@/features/skill/hooks/useSkillCategory";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";
 import { SkillTabs } from "@/features/skill/components/SkillTabs";
-import { SkillCard } from "@/features/skill/components/SkillCard";
+import { SkillList } from "@/features/skill/components/SkillList";
 import * as styles from "./style.css";
 
 type Props = {
@@ -34,11 +34,7 @@ export function SkillPage({ skillData }: Props) {
         </div>
       </div>
 
-      <div className={styles.skillList}>
-        {filteredSkillData.map((skillItem) => (
-          <SkillCard key={skillItem.id} skillItem={skillItem} />
-        ))}
-      </div>
+      <SkillList skillItems={filteredSkillData} />
     </div>
   );
 }
