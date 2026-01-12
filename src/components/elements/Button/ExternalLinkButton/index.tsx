@@ -20,7 +20,7 @@ export function ExternalLinkButton({
       target="_blank"
       rel="noreferrer noopener"
     >
-      {children}
+      <span>{children}</span>
     </a>
   );
 }
