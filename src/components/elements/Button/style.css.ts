@@ -13,7 +13,7 @@ export const buttonBase = style({
   cursor: "pointer",
 });
 
-export const buttonColor = style({
+export const buttonBlack = style({
   background: colors.black,
   color: colors.white,
   selectors: {

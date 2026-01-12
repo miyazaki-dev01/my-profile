@@ -43,7 +43,12 @@ export function PortfolioDetailPage({
         <div className={styles.description}>{description}</div>
 
         <div className={styles.siteLinkButton}>
-          <ExternalLinkButton href={serviceURL}>Visit Site</ExternalLinkButton>
+          <ExternalLinkButton
+            href={serviceURL}
+            className={styles.externalLinkButton}
+          >
+            Visit Site
+          </ExternalLinkButton>
         </div>
 
         <ContentDetailBody body={body} images={images} ogpData={ogpData} />
