@@ -22,6 +22,15 @@ export const buttonColor = styleVariants({
         background: colors.buttonHoverBackground,
         color: colors.black,
       },
+      "&:disabled": {
+        background: colors.black_12,
+        color: colors.black_20,
+        cursor: "default",
+      },
+      '&[data-loading="true"], &[data-loading="true"]:disabled': {
+        background: colors.black,
+        color: colors.white,
+      },
     },
     "@media": {
       [pcMedia]: {
@@ -29,7 +38,7 @@ export const buttonColor = styleVariants({
         transitionTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
         transitionDuration: ".3s",
         selectors: {
-          "&:hover": {
+          "&:not(:disabled):hover": {
             background: colors.buttonHoverBackground,
             color: colors.black,
           },
@@ -45,6 +54,13 @@ export const buttonColor = styleVariants({
         background: colors.lightGray,
         color: colors.black,
       },
+      "&:disabled": {
+        opacity: 0.5,
+        cursor: "default",
+      },
+      '&[data-loading="true"], &[data-loading="true"]:disabled': {
+        opacity: 1,
+      },
     },
     "@media": {
       [pcMedia]: {
@@ -52,7 +68,7 @@ export const buttonColor = styleVariants({
         transitionTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
         transitionDuration: ".3s",
         selectors: {
-          "&:hover": {
+          "&:not(:disabled):hover": {
             background: colors.lightGray,
             color: colors.black,
           },
