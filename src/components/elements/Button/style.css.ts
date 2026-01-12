@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
 import { breakpoints } from "@/themes/breakpoints";
 import { colors } from "@/themes/colors";
 
@@ -13,25 +13,49 @@ export const buttonBase = style({
   cursor: "pointer",
 });
 
-export const buttonBlack = style({
-  background: colors.black,
-  color: colors.white,
-  selectors: {
-    "&:active": {
-      background: colors.buttonHoverBackground,
-      color: colors.black,
+export const buttonColor = styleVariants({
+  black: {
+    background: colors.black,
+    color: colors.white,
+    selectors: {
+      "&:active": {
+        background: colors.buttonHoverBackground,
+        color: colors.black,
+      },
+    },
+    "@media": {
+      [pcMedia]: {
+        transitionProperty: "background-color, color, border",
+        transitionTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
+        transitionDuration: ".3s",
+        selectors: {
+          "&:hover": {
+            background: colors.buttonHoverBackground,
+            color: colors.black,
+          },
+        },
+      },
     },
   },
-
-  "@media": {
-    [pcMedia]: {
-      transitionProperty: "background-color, color, border",
-      transitionTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
-      transitionDuration: ".3s",
-      selectors: {
-        "&:hover": {
-          background: colors.buttonHoverBackground,
-          color: colors.black,
+  white: {
+    background: colors.inputBackgroundGray,
+    color: colors.black,
+    selectors: {
+      "&:active": {
+        background: colors.lightGray,
+        color: colors.black,
+      },
+    },
+    "@media": {
+      [pcMedia]: {
+        transitionProperty: "background-color, color, border",
+        transitionTimingFunction: "cubic-bezier(.4, 0, .2, 1)",
+        transitionDuration: ".3s",
+        selectors: {
+          "&:hover": {
+            background: colors.lightGray,
+            color: colors.black,
+          },
         },
       },
     },
