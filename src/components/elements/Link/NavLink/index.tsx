@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
 
-type Props = Omit<React.ComponentPropsWithoutRef<typeof Link>, "href"> & {
+type Props = Omit<
+  React.ComponentPropsWithoutRef<typeof InternalLink>,
+  "href"
+> & {
   href: string;
   children: React.ReactNode;
 };
@@ -26,7 +29,7 @@ export function NavLink({ href, children, ...rest }: Props) {
   const isSamePage = href === current;
 
   const handleClick = useCallback<
-    NonNullable<React.ComponentPropsWithoutRef<typeof Link>["onClick"]>
+    NonNullable<React.ComponentPropsWithoutRef<typeof InternalLink>["onClick"]>
   >(
     (e) => {
       rest.onClick?.(e);
@@ -40,8 +43,8 @@ export function NavLink({ href, children, ...rest }: Props) {
   );
 
   return (
-    <Link href={href} scroll={false} {...rest} onClick={handleClick}>
+    <InternalLink href={href} scroll={false} {...rest} onClick={handleClick}>
       {children}
-    </Link>
+    </InternalLink>
   );
 }

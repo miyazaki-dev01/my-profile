@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { PortfolioListItem } from "@/features/portfolio/portfolio-list/types/portfolioList";
 import { PATH } from "@/constants/paths";
 import { FallbackImage } from "@/components/elements/FallbackImage";
@@ -15,7 +15,7 @@ export function PortfolioCard({ portfolioListItem }: Props) {
 
   return (
     <li>
-      <Link
+      <InternalLink
         href={portfolioLink}
         scroll={false}
         className={styles.portfolioCard}
@@ -33,7 +33,7 @@ export function PortfolioCard({ portfolioListItem }: Props) {
           <p className={styles.title}>{title}</p>
           <p className={styles.description}>{description}</p>
         </div>
-      </Link>
+      </InternalLink>
     </li>
   );
 }

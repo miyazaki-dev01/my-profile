@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { ContentType } from "@/config/previewCookies";
 import { API_ROUTES } from "@/constants/apiRoutes";
 import * as styles from "./style.css";
@@ -11,9 +11,9 @@ export function PreviewBanner({ type }: Props) {
   return (
     <div className={styles.container}>
       プレビュー表示中
-      <Link href={disableHref} scroll={false} className={styles.link}>
+      <InternalLink href={disableHref} scroll={false} className={styles.link}>
         解除して一覧へ
-      </Link>
+      </InternalLink>
     </div>
   );
 }

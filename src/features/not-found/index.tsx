@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { Logo } from "@/components/elements/Logo";
 import { PAGES } from "@/constants/pages";
 import { NOT_FOUND_TEXT } from "@/features/not-found/constants/text";
@@ -8,13 +8,13 @@ import * as styles from "./style.css";
 export function NotFoundPage() {
   return (
     <>
-      <Link
+      <InternalLink
         href={PAGES.profile.path}
         scroll={false}
         className={styles.brandLogoLink}
       >
         <Logo style="notFoundHeader" fill="white" />
-      </Link>
+      </InternalLink>
 
       <main className={styles.main}>
         <div className={styles.gridContainer}>
@@ -23,13 +23,13 @@ export function NotFoundPage() {
           </div>
           <div className={styles.gridBody}>
             <p className={styles.notFoundMessage}>{NOT_FOUND_TEXT.pageTitle}</p>
-            <Link
+            <InternalLink
               href={PAGES.profile.path}
               scroll={false}
               className={styles.notFoundButton}
             >
               <span>{NOT_FOUND_TEXT.toTop}</span>
-            </Link>
+            </InternalLink>
           </div>
         </div>
       </main>

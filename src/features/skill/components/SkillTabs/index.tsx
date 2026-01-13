@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { SkillCategoryParam } from "@/features/skill/types/skill";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";
 import { useWheelToHorizontalScroll } from "@/hooks/useWheelToHorizontalScroll";
@@ -32,11 +32,11 @@ export function SkillTabs({ activeCategory }: Props) {
 
           return (
             <li key={tab.key} className={styles.tabItem}>
-              <Link href={buildSkillPath(tab.key)} scroll={false}>
+              <InternalLink href={buildSkillPath(tab.key)} scroll={false}>
                 <p className={styles.tabText({ active: isActive })}>
                   {tab.label}
                 </p>
-              </Link>
+              </InternalLink>
             </li>
           );
         })}

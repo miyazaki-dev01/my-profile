@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { buildCareerPath } from "@/features/career/utils/careerPath";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";
 import { useWheelToHorizontalScroll } from "@/hooks/useWheelToHorizontalScroll";
@@ -34,9 +34,9 @@ export function CareerTabs({ years, activeYear }: Props) {
 
           return (
             <li key={year} className={styles.tabItem}>
-              <Link href={buildCareerPath(year)} scroll={false}>
+              <InternalLink href={buildCareerPath(year)} scroll={false}>
                 <p className={styles.tabText({ active: isActive })}>{year}</p>
-              </Link>
+              </InternalLink>
             </li>
           );
         })}

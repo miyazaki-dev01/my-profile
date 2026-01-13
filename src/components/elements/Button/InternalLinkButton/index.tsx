@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { buttonBase, buttonColor } from "../style.css";
 
 type Props = {
@@ -15,12 +15,11 @@ export function InternalLinkButton({
   children,
 }: Props) {
   return (
-    <Link
+    <InternalLink
       href={href}
-      scroll={false}
       className={`${buttonBase} ${buttonColor[variant]} ${className ?? ""}`}
     >
       <span>{children}</span>
-    </Link>
+    </InternalLink>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { BlogListItem } from "@/features/blog/blog-list/types/blogList";
 import { PATH } from "@/constants/paths";
 import { FallbackImage } from "@/components/elements/FallbackImage";
@@ -17,7 +17,7 @@ export function BlogCard({ blogListItem }: Props) {
 
   return (
     <li>
-      <Link href={blogLink} scroll={false}>
+      <InternalLink href={blogLink} scroll={false}>
         <div className={styles.blogCardStyle}>
           <div className={styles.textContainerStyle}>
             <p className={styles.titleStyle}>{title}</p>
@@ -32,7 +32,7 @@ export function BlogCard({ blogListItem }: Props) {
             />
           </div>
         </div>
-      </Link>
+      </InternalLink>
     </li>
   );
 }
