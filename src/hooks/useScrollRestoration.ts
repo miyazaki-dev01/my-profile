@@ -11,6 +11,8 @@ import {
 
 const KEY_PREFIX = "_next_scroll_";
 
+type HistoryUrlArg = Parameters<History["pushState"]>[2];
+
 type Props = {
   isPageLoading?: boolean;
 };
@@ -32,7 +34,7 @@ const buildAsPath = (pathname: string, search: string) =>
  * history.pushState/replaceState の第3引数（url）を安全にパースする
  */
 const parseUrlArg = (
-  url: any
+  url: HistoryUrlArg
 ): { pathname: string; search: string; asPath: string } => {
   if (!url) {
     const pathname = window.location.pathname;
@@ -171,16 +173,20 @@ export function useScrollRestoration({ isPageLoading = false }: Props) {
     const origPushState = window.history.pushState;
     const origReplaceState = window.history.replaceState;
 
-    window.history.pushState = function (...args) {
+    window.history.pushState = function (
+      ...args: Parameters<History["pushState"]>
+    ) {
       const to = parseUrlArg(args[2]);
       captureNav(to.pathname, to.asPath);
-      return origPushState.apply(this, args as any);
+      return origPushState.apply(this, args);
     };
 
-    window.history.replaceState = function (...args) {
+    window.history.replaceState = function (
+      ...args: Parameters<History["replaceState"]>
+    ) {
       const to = parseUrlArg(args[2]);
       captureNav(to.pathname, to.asPath);
-      return origReplaceState.apply(this, args as any);
+      return origReplaceState.apply(this, args);
     };
 
     const onPopState = () => {
