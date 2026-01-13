@@ -4,7 +4,7 @@ import { PATH } from "@/constants/paths";
 import { getPortfolioDraftById } from "@/features/portfolio/portfolio-detail/api/getPortfolioDetail";
 import { getBlogDraftById } from "@/features/blog/blog-detail/api/getBlogDetail";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 const MAX_AGE_SECONDS = 60 * 30;
 

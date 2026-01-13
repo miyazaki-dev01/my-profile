@@ -6,7 +6,7 @@ import {
 } from "@/config/previewCookies";
 import { PATH } from "@/constants/paths";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 const text = (body: string, status: number) =>
   new Response(body, {

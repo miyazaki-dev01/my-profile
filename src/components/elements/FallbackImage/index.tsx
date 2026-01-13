@@ -24,30 +24,33 @@ type NextImageVariantProps = CommonProps &
 type FallbackImageProps = ImgVariantProps | NextImageVariantProps;
 
 export function FallbackImage(props: FallbackImageProps) {
-  const { tag, src, alt = "", fallbackSrc } = props;
+  const { tag, src, alt = "", fallbackSrc, ...rest } = props;
   const { imageSrc, handleError } = useFallbackImage({ src, fallbackSrc });
 
   if (tag === "img") {
-    const {
-      tag: _tag,
-      src: _src,
-      alt: _alt,
-      fallbackSrc: _fallbackSrc,
-      ...rest
-    } = props as ImgVariantProps;
-
-    return <img src={imageSrc} alt={alt} onError={handleError} {...rest} />;
+    return (
+      <img
+        src={imageSrc}
+        alt={alt}
+        onError={handleError}
+        {...(rest as Omit<
+          ImgVariantProps,
+          "tag" | "src" | "alt" | "fallbackSrc"
+        >)}
+      />
+    );
   }
 
-  const {
-    tag: _tag,
-    src: _src,
-    alt: _alt,
-    fallbackSrc: _fallbackSrc,
-    ...rest
-  } = props as NextImageVariantProps;
-
   return (
-    <Image src={imageSrc} alt={alt} fill onError={handleError} {...rest} />
+    <Image
+      src={imageSrc}
+      alt={alt}
+      fill
+      onError={handleError}
+      {...(rest as Omit<
+        NextImageVariantProps,
+        "tag" | "src" | "alt" | "fallbackSrc"
+      >)}
+    />
   );
 }

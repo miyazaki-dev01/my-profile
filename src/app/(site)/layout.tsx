@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ContentLoadingProvider } from "@/providers/ContentLoadingProvider";
 import { ScrollRestoration } from "@/components/elements/ScrollRestoration";
 import { BaseSiteLayout } from "@/components/layouts/BaseSiteLayout";
@@ -13,7 +13,10 @@ export default async function SiteLayout({ children }: Props) {
 
   return (
     <ContentLoadingProvider>
-      <ScrollRestoration />
+      <Suspense fallback={null}>
+        <ScrollRestoration />
+      </Suspense>
+
       <BaseSiteLayout careerLatestYear={careerLatestYear}>
         {children}
       </BaseSiteLayout>

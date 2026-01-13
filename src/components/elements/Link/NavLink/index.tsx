@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useCallback, useMemo } from "react";
 
 type Props = Omit<
   React.ComponentPropsWithoutRef<typeof InternalLink>,
@@ -18,16 +16,6 @@ type Props = Omit<
  * - 現在の URL と href が同じ場合は遷移をキャンセルし、スクロールが先頭に戻るのを防ぐ
  */
 export function NavLink({ href, children, ...rest }: Props) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const current = useMemo(() => {
-    const query = searchParams?.toString();
-    return query ? `${pathname}?${query}` : pathname;
-  }, [pathname, searchParams]);
-
-  const isSamePage = href === current;
-
   const handleClick = useCallback<
     NonNullable<React.ComponentPropsWithoutRef<typeof InternalLink>["onClick"]>
   >(
@@ -35,11 +23,10 @@ export function NavLink({ href, children, ...rest }: Props) {
       rest.onClick?.(e);
       if (e.defaultPrevented) return;
 
-      if (isSamePage) {
-        e.preventDefault();
-      }
+      const current = `${window.location.pathname}${window.location.search}`;
+      if (href === current) e.preventDefault();
     },
-    [rest.onClick, isSamePage]
+    [rest.onClick, href]
   );
 
   return (
