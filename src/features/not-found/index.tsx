@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/elements/Logo";
 import { PAGES } from "@/constants/pages";
+import { NOT_FOUND_TEXT } from "@/features/not-found/constants/text";
 import { Copyright } from "@/components/elements/Copyright";
 import * as styles from "./style.css";
 
@@ -21,15 +22,13 @@ export function NotFoundPage() {
             <Logo style="notFoundCenter" fill="white" />
           </div>
           <div className={styles.gridBody}>
-            <p className={styles.notFoundMessage}>
-              お探しのページは見つかりませんでした
-            </p>
+            <p className={styles.notFoundMessage}>{NOT_FOUND_TEXT.pageTitle}</p>
             <Link
               href={PAGES.profile.path}
               scroll={false}
               className={styles.notFoundButton}
             >
-              <span>トップページへ</span>
+              <span>{NOT_FOUND_TEXT.toTop}</span>
             </Link>
           </div>
         </div>
