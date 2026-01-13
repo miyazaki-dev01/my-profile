@@ -1,4 +1,3 @@
-import React from "react";
 import type { CareerLatestYear } from "@/features/career/types/career";
 import { DesktopSideNav } from "@/components/layouts/Navigation/DesktopSideNav";
 import { MobileHeaderNav } from "@/components/layouts/Navigation/MobileHeaderNav";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { DependencyList } from "react";
 
 type UseHorizontalScrollFadeResult<T extends HTMLElement> = {

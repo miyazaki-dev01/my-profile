@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import LogoSvg from "@public/logo/logo.svg";
 import { useInitialLoadingContext } from "@/contexts/InitialLoadingContext";
 import { Color, colors } from "@/themes/colors";

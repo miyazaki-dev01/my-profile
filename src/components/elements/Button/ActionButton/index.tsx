@@ -1,3 +1,4 @@
+import React from "react";
 import { Spinner } from "@/components/elements/Spinner";
 import { buttonBase, buttonColor } from "../style.css";
 import * as styles from "./style.css";

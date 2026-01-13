@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useMemo } from "react";
 import type { SkillItem } from "@/features/skill/types/skill";
 import { useSkillCategory } from "@/features/skill/hooks/useSkillCategory";

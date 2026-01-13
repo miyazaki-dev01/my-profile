@@ -1,4 +1,3 @@
-import React from "react";
 import type { ProfileData } from "@/features/profile/types/profileData";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";

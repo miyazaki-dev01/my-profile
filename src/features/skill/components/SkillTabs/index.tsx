@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { SkillCategoryParam } from "@/features/skill/types/skill";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";

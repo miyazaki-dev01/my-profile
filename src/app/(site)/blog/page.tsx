@@ -1,4 +1,3 @@
-import React from "react";
 import { BlogListPage } from "@/features/blog/blog-list";
 import { getBlogListData } from "@/features/blog/blog-list/api/getBlogList";
 

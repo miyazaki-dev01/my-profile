@@ -1,4 +1,3 @@
-import React from "react";
 import { ProfilePage } from "@/features/profile";
 import { getProfileData } from "@/features/profile/api/getProfileData";
 

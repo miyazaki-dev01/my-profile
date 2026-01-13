@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { buildCareerPath } from "@/features/career/utils/careerPath";
 import { useHorizontalScrollFade } from "@/hooks/useHorizontalScrollFade";

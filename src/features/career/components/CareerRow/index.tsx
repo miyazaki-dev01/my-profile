@@ -1,4 +1,3 @@
-import React from "react";
 import type { CareerItemWithYear } from "@/features/career/utils/careerModel";
 import { formatYearMonth } from "@/libs/date";
 import * as styles from "./style.css";

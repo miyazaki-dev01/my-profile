@@ -1,4 +1,3 @@
-import React from "react";
 import { SkillPage } from "@/features/skill/";
 import { getSkillData } from "@/features/skill/api/getSkillData";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { PortfolioListPage } from "@/features/portfolio/portfolio-list";
 import { getPortfolioListData } from "@/features/portfolio/portfolio-list/api/getPortfolioList";
 

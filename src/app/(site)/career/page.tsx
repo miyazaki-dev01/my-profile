@@ -1,4 +1,3 @@
-import React from "react";
 import { CareerPage } from "@/features/career";
 import { getCareerData } from "@/features/career/api/getCareerData";
 

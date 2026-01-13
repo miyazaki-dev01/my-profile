@@ -1,4 +1,3 @@
-import React from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { PortfolioListItem } from "@/features/portfolio/portfolio-list/types/portfolioList";
 import { PATH } from "@/constants/paths";

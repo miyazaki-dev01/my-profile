@@ -1,4 +1,3 @@
-import React from "react";
 import type { SkillItem } from "@/features/skill/types/skill";
 import { SkillCard } from "@/features/skill/components/SkillCard";
 import * as styles from "./style.css";

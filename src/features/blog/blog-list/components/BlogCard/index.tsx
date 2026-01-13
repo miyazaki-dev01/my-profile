@@ -1,4 +1,3 @@
-import React from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
 import type { BlogListItem } from "@/features/blog/blog-list/types/blogList";
 import { PATH } from "@/constants/paths";

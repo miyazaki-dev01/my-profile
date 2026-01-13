@@ -1,3 +1,4 @@
+import React from "react";
 import { InternalLink } from "@/components/elements/Link/InternalLink";
 import { buttonBase, buttonColor } from "../style.css";
 

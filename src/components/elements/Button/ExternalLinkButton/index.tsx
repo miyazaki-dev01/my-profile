@@ -1,3 +1,4 @@
+import React from "react";
 import { buttonBase, buttonColor } from "../style.css";
 
 type Props = {

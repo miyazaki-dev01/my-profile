@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import type { CareerLatestYear } from "@/features/career/types/career";
 import { useState } from "react";
 import { NavLink } from "@/components/elements/Link/NavLink";

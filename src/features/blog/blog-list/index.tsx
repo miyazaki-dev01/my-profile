@@ -1,4 +1,3 @@
-import React from "react";
 import type { BlogList } from "@/features/blog/blog-list/types/blogList";
 import { PageTitle } from "@/components/elements/PageTitle";
 import { PAGES } from "@/constants/pages";

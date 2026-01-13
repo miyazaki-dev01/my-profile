@@ -1,4 +1,3 @@
-import React from "react";
 import type { SkillItem } from "@/features/skill/types/skill";
 import { FallbackImage } from "@/components/elements/FallbackImage";
 import * as styles from "./style.css";

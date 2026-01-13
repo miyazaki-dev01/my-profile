@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { IMAGE_MODAL_FADE_MS } from "@/features/content-detail/mdx/components/ImageModal/useImageModal";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { Fade } from "@/components/elements/Fade";

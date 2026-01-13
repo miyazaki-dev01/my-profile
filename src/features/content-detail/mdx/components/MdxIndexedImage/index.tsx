@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import type { ContentDetailBase } from "@/features/content-detail/types/contentDetailBase";
 import { useImageModal } from "@/features/content-detail/mdx/components/ImageModal/useImageModal";
 import { ImageModal } from "@/features/content-detail/mdx/components/ImageModal";

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { ContactFormProvider } from "@/features/contact/providers/ContactFormProvider";
 
 type Props = {

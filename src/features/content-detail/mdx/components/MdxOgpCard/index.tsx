@@ -1,4 +1,3 @@
-import React from "react";
 import type { OgpDataByUrl } from "@/features/content-detail/types/ogp";
 import { ExternalLink } from "@/components/elements/Link/ExternalLink";
 import { FallbackImage } from "@/components/elements/FallbackImage";

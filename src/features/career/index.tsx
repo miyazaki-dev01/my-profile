@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import type { CareerItem } from "@/features/career/types/career";
 import { useCareerYear } from "@/features/career/hooks/useCareerYear";
 import {
