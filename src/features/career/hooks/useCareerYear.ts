@@ -19,11 +19,9 @@ export function useCareerYear(years: number[]) {
   const searchParams = useSearchParams();
   const rawYear = searchParams.get("year");
 
-  const yearsKey = years.join(",");
-
   const activeYear = useMemo(
     () => normalizeYear(rawYear, years),
-    [rawYear, yearsKey]
+    [rawYear, years]
   );
 
   useEffect(() => {

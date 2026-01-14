@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { IMAGES, type Images } from "@/constants/images";
 
 const DEFAULT_FALLBACK_SRC = IMAGES.default_thumbnail;
@@ -19,16 +19,19 @@ export function useFallbackImage({ src, fallbackSrc }: Args) {
     ? IMAGES[fallbackSrc]
     : DEFAULT_FALLBACK_SRC;
 
-  const normalizeSrc = (value?: string | null): string => {
-    const trimmed = value?.trim();
-    return trimmed ? trimmed : effectiveFallback;
-  };
+  const normalizeSrc = useCallback(
+    (value?: string | null): string => {
+      const trimmed = value?.trim();
+      return trimmed ? trimmed : effectiveFallback;
+    },
+    [effectiveFallback]
+  );
 
   const [imageSrc, setImageSrc] = useState<string>(() => normalizeSrc(src));
 
   useEffect(() => {
     setImageSrc(normalizeSrc(src));
-  }, [src, effectiveFallback]);
+  }, [src, normalizeSrc]);
 
   const handleError = () => setImageSrc(effectiveFallback);
 

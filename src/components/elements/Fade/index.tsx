@@ -37,7 +37,7 @@ export function Fade({
     setVisible(false);
     const t = window.setTimeout(() => setMounted(false), durationMs);
     return () => window.clearTimeout(t);
-  }, [inProp]);
+  }, [inProp, durationMs]);
 
   if (!mounted) return null;
 

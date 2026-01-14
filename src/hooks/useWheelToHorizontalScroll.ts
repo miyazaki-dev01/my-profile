@@ -35,6 +35,7 @@ export function useWheelToHorizontalScroll<T extends HTMLElement>(
     easing = 0.2,
   }: Options = {}
 ) {
+  const depsKey = deps.map(String).join("|");
   const targetRef = useRef<number | null>(null);
   const frameIdRef = useRef<number | null>(null);
 
@@ -100,5 +101,5 @@ export function useWheelToHorizontalScroll<T extends HTMLElement>(
       frameIdRef.current = null;
       targetRef.current = null;
     };
-  }, [enabled, desktopMinWidthPx, speed, easing, ...deps]);
+  }, [ref, enabled, desktopMinWidthPx, speed, easing, depsKey]);
 }

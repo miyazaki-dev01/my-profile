@@ -17,6 +17,7 @@ export function useHorizontalScrollFade<T extends HTMLElement>(
   epsilon = 1
 ): UseHorizontalScrollFadeResult<T> {
   const ref = useRef<T>(null);
+  const depsKey = deps.map(String).join("|");
   const [showLeftFade, setShowLeftFade] = useState(false);
   const [showRightFade, setShowRightFade] = useState(false);
 
@@ -61,7 +62,7 @@ export function useHorizontalScrollFade<T extends HTMLElement>(
       el.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
     };
-  }, [updateFade, ...deps]);
+  }, [updateFade, depsKey]);
 
   return { ref, showLeftFade, showRightFade };
 }
