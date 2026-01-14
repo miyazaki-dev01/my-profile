@@ -1,4 +1,3 @@
-import React from "react";
 import type { CareerLatestYear } from "@/features/career/types/career";
 import { NavLink } from "@/components/elements/Link/NavLink";
 import { Logo } from "@/components/elements/Logo";
