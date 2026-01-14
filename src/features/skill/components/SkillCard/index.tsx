@@ -16,7 +16,7 @@ export function SkillCard({ skillItem }: Props) {
         <div className={styles.iconWrap}>
           <FallbackImage
             tag="img"
-            fallbackSrc="default_profile"
+            fallbackSrc="default_square"
             src={icon.url}
             alt={name}
             className={styles.iconImage}
@@ -25,7 +25,7 @@ export function SkillCard({ skillItem }: Props) {
             <div className={styles.subIconWrap}>
               <FallbackImage
                 tag="img"
-                fallbackSrc="default_profile"
+                fallbackSrc="default_square"
                 src={subIcon.url}
                 className={styles.iconImage}
               />

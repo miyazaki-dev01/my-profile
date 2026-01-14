@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { IMAGES, type Images } from "@/constants/images";
 
-const DEFAULT_FALLBACK_SRC = IMAGES.default_thumbnail;
+const DEFAULT_FALLBACK_SRC = IMAGES.default_thumb;
 
 type Args = {
   src?: string | null;

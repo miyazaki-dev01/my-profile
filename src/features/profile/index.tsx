@@ -26,7 +26,7 @@ export function ProfilePage({ profileData }: Props) {
             <FallbackImage
               tag="Image"
               src={profileImage.url}
-              fallbackSrc="default_profile"
+              fallbackSrc="default_square"
               sizes="100vw"
               priority
               className={styles.profileImage}

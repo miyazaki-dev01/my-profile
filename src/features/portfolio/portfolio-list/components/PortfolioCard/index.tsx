@@ -24,7 +24,7 @@ export function PortfolioCard({ portfolioListItem }: Props) {
             tag="img"
             src={thumbnail.url}
             alt={title}
-            fallbackSrc="default_thumbnail"
+            fallbackSrc="default_thumb"
             className={styles.thumbnailContent}
           />
         </div>

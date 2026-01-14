@@ -28,7 +28,7 @@ export function PortfolioDetailPage({
         <FallbackImage
           tag="img"
           src={mainImage.url}
-          fallbackSrc="default_main_article"
+          fallbackSrc="default_hero"
           className={styles.mainImage}
         />
       </div>
