@@ -45,7 +45,7 @@ export const confirmListRoot = style({
 
 export const confirmListWrap = style({
   borderRadius: ".5rem",
-  border: `1px solid ${colors.lightGray}`,
+  border: `1px solid ${colors.black_10}`,
 });
 
 export const confirmListContainer = style({

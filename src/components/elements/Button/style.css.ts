@@ -19,7 +19,7 @@ export const buttonColor = styleVariants({
     color: colors.white,
     selectors: {
       "&:active": {
-        background: colors.buttonHoverBackground,
+        background: colors.black_02,
         color: colors.black,
       },
       "&:disabled": {
@@ -39,7 +39,7 @@ export const buttonColor = styleVariants({
         transitionDuration: ".3s",
         selectors: {
           "&:not(:disabled):hover": {
-            background: colors.buttonHoverBackground,
+            background: colors.black_02,
             color: colors.black,
           },
         },
@@ -47,11 +47,11 @@ export const buttonColor = styleVariants({
     },
   },
   white: {
-    background: colors.inputBackgroundGray,
+    background: colors.black_04,
     color: colors.black,
     selectors: {
       "&:active": {
-        background: colors.lightGray,
+        background: colors.black_10,
         color: colors.black,
       },
       "&:disabled": {
@@ -69,7 +69,7 @@ export const buttonColor = styleVariants({
         transitionDuration: ".3s",
         selectors: {
           "&:not(:disabled):hover": {
-            background: colors.lightGray,
+            background: colors.black_10,
             color: colors.black,
           },
         },

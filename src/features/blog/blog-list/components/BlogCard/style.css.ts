@@ -8,9 +8,9 @@ export const blogCardStyle = style({
   display: "flex",
   paddingBlock: "1.5rem",
   paddingInline: 0,
-  borderBlockEnd: `.5px solid ${colors.lightGray}`,
+  borderBlockEnd: `.5px solid ${colors.black_10}`,
   ":first-child": {
-    borderTop: `.5px solid ${colors.lightGray}`,
+    borderTop: `.5px solid ${colors.black_10}`,
   },
   "@media": {
     [pcMedia]: {
@@ -38,7 +38,7 @@ export const titleStyle = style({
 
 export const publishedAtStyle = style({
   marginTop: "0.5rem",
-  color: colors.darkGray,
+  color: colors.black_40,
   fontSize: "15px",
   fontWeight: 500,
   lineHeight: 1,
@@ -49,7 +49,7 @@ export const imageContainerStyle = style({
   position: "relative",
   flexShrink: 0,
   overflow: "hidden",
-  border: `1px solid ${colors.skeletonGray}`,
+  border: `1px solid ${colors.black_04}`,
   borderRadius: ".25rem",
   width: "85px",
   height: "64px",

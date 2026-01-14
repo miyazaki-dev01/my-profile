@@ -15,7 +15,7 @@ export const backdrop = style({
   backgroundColor: "transparent",
   "@media": {
     [tbMedia]: {
-      backgroundColor: colors.sideNavBackground,
+      backgroundColor: colors.white_20,
       padding: "3rem",
       backdropFilter: "blur(20px)",
       WebkitBackdropFilter: "blur(20px)",

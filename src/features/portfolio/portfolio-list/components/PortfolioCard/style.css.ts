@@ -83,7 +83,7 @@ export const description = style({
   WebkitLineClamp: 2,
   width: "100%",
   verticalAlign: "top",
-  color: colors.darkGray,
+  color: colors.black_40,
   fontSize: "12px",
   lineHeight: 1.3,
   letterSpacing: 0,

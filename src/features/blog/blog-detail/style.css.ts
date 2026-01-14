@@ -73,7 +73,7 @@ export const dateItem = style({
   display: "flex",
   alignItems: "center",
   gap: "0.25rem",
-  color: colors.gray,
+  color: colors.black_30,
 });
 
 export const dateIcon = style({
@@ -93,7 +93,7 @@ export const date = style({
 export const line = style({
   width: "100%",
   height: "1px",
-  background: colors.lightGray,
+  background: colors.black_10,
   transform: "scaleY(0.5)",
   transformOrigin: "top",
   marginBlock: "6rem",

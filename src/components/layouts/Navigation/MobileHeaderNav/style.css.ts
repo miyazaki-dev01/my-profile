@@ -16,7 +16,7 @@ export const headerBase = style({
   width: "100%",
   paddingLeft: "1.5rem",
   paddingRight: "1rem",
-  backgroundColor: colors.headerNavBackground,
+  backgroundColor: colors.white_94,
   backdropFilter: "blur(10px)",
   WebkitBackdropFilter: "blur(10px)",
 });

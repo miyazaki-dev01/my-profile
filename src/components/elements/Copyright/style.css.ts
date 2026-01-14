@@ -15,14 +15,14 @@ export const copyrightVariant = styleVariants({
   sideNav: [
     copyrightBase,
     {
-      color: colors.darkGray,
+      color: colors.black_40,
       marginTop: "2.5rem",
     },
   ],
   mobileFooter: [
     copyrightBase,
     {
-      color: colors.darkGray,
+      color: colors.black_40,
       marginTop: "0.625rem",
       "@media": {
         [tbMedia]: {
@@ -34,7 +34,7 @@ export const copyrightVariant = styleVariants({
   notFoundFooter: [
     copyrightBase,
     {
-      color: colors.notFoundCopyright,
+      color: colors.white_40,
     },
   ],
 });

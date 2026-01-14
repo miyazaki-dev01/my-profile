@@ -5,7 +5,7 @@ import { colors } from "@/themes/colors";
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 
 export const item = style({
-  borderBottom: `1px solid ${colors.lightGray}`,
+  borderBottom: `1px solid ${colors.black_10}`,
 });
 
 export const details = style({
@@ -62,7 +62,7 @@ export const date = style({
   fontWeight: 500,
   lineHeight: 1,
   letterSpacing: 0,
-  color: colors.darkGray,
+  color: colors.black_40,
 });
 
 export const chevron = style({

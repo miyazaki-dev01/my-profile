@@ -8,7 +8,7 @@ export const card = style({
   display: "block",
   textDecoration: "none",
   marginTop: "1.75rem",
-  border: `1px solid ${colors.lightGray}`,
+  border: `1px solid ${colors.black_10}`,
   borderRadius: ".3rem",
   overflow: "hidden",
 });
@@ -48,7 +48,7 @@ export const description = style({
   overflowWrap: "break-word",
   WebkitLineClamp: 1,
   fontSize: "12px",
-  color: colors.darkGray,
+  color: colors.black_40,
   lineHeight: 1,
   letterSpacing: 0,
   lineBreak: "anywhere",
@@ -73,7 +73,7 @@ export const favicon = style({
 export const domain = style({
   fontSize: "12px",
   lineHeight: 1,
-  color: colors.darkGray,
+  color: colors.black_40,
   letterSpacing: 0,
 });
 
@@ -82,7 +82,7 @@ export const imageWrapper = style({
   width: "100px",
   aspectRatio: "1 / 1",
   overflow: "hidden",
-  borderLeft: `1px solid ${colors.lightGray}`,
+  borderLeft: `1px solid ${colors.black_10}`,
   "@media": {
     [tbMedia]: {
       width: "200px",

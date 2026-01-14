@@ -6,7 +6,7 @@ export const label = style({
   fontSize: "12px",
   lineHeight: 1,
   letterSpacing: 0,
-  color: colors.darkGray,
+  color: colors.black_40,
 });
 
 export const value = style({

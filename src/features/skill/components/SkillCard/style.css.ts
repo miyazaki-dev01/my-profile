@@ -6,13 +6,13 @@ import { colors } from "@/themes/colors";
 const tbMedia = `screen and (min-width: ${breakpoints.tablet}px)`;
 
 export const root = style({
-  borderBottom: `0.5px solid ${colors.lightGray}`,
+  borderBottom: `0.5px solid ${colors.black_10}`,
   ":first-child": {
-    borderTop: `.5px solid ${colors.lightGray}`,
+    borderTop: `.5px solid ${colors.black_10}`,
   },
   "@media": {
     [tbMedia]: {
-      border: `.5px solid ${colors.lightGray}`,
+      border: `.5px solid ${colors.black_10}`,
     },
   },
 });

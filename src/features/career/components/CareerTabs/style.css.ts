@@ -35,7 +35,7 @@ export const rightFade = style({
 export const tabList = style({
   display: "flex",
   overflowX: "auto",
-  borderBottom: `1px solid ${colors.lightGray}`,
+  borderBottom: `1px solid ${colors.black_10}`,
   scrollbarWidth: "none",
   "@media": {
     [pcMedia]: {

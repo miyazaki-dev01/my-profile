@@ -62,9 +62,9 @@ export const strong = style({
 });
 
 export const blockquote = style({
-  borderLeft: `4px solid ${colors.lightGray}`,
+  borderLeft: `4px solid ${colors.black_10}`,
   paddingLeft: "1rem",
-  color: colors.darkGray,
+  color: colors.black_40,
 });
 globalStyle(`${blockquote} p`, {
   fontSize: "15px",
@@ -81,7 +81,7 @@ export const a = style({
 
 export const inlineCode = style({
   fontSize: "14px",
-  backgroundColor: colors.lightGray,
+  backgroundColor: colors.black_10,
   padding: ".15rem .3rem",
   borderRadius: "4px",
   marginInline: "2px",
@@ -163,8 +163,8 @@ export const table = style({
 
 export const th = style({
   overflowWrap: "anywhere",
-  backgroundColor: colors.lightGray,
-  border: `1px solid ${colors.darkGray}`,
+  backgroundColor: colors.black_10,
+  border: `1px solid ${colors.black_40}`,
   paddingBlock: "0.4rem",
   paddingInline: "0.5rem",
   fontSize: "15px",
@@ -174,7 +174,7 @@ export const th = style({
 
 export const td = style({
   overflowWrap: "anywhere",
-  border: `1px solid ${colors.darkGray}`,
+  border: `1px solid ${colors.black_40}`,
   paddingBlock: "0.45rem",
   paddingInline: "0.5rem",
   fontSize: "15px",

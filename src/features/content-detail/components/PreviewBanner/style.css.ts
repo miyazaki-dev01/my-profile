@@ -5,7 +5,7 @@ export const container = style({
   display: "flex",
   alignItems: "center",
   border: `1px solid ${colors.red}`,
-  backgroundColor: colors.inputBackgroundGray,
+  backgroundColor: colors.black_04,
   borderRadius: ".5rem",
   paddingInline: "1rem",
   fontSize: "16px",

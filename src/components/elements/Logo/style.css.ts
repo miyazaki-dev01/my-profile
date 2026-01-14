@@ -38,7 +38,7 @@ export const skeletonCircle = style({
   display: "block",
   borderRadius: "9999px",
   overflow: "hidden",
-  background: colors.skeletonGray,
+  background: colors.black_04,
   width: logoSizeSpVar,
   height: logoSizeSpVar,
   "@media": {
@@ -56,7 +56,7 @@ export const skeletonCircle = style({
       content: '""',
       position: "absolute",
       inset: 0,
-      backgroundImage: `linear-gradient(90deg, transparent, ${colors.skeletonWhite}, transparent)`,
+      backgroundImage: `linear-gradient(90deg, transparent, ${colors.white_80}, transparent)`,
       animation: `${shimmer} 1.2s linear infinite`,
     },
   },

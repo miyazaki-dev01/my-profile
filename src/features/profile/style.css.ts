@@ -70,7 +70,7 @@ export const content = style({
   display: "flex",
   flexDirection: "column",
   paddingBottom: "2rem",
-  borderBottom: `0.5px solid ${colors.lightGray}`,
+  borderBottom: `0.5px solid ${colors.black_10}`,
   gap: "3rem",
   "@media": {
     [tbMedia]: {
@@ -80,7 +80,7 @@ export const content = style({
 });
 
 export const jobCategory = style({
-  color: colors.darkGray,
+  color: colors.black_40,
   fontSize: "16px",
   fontWeight: 500,
   lineHeight: 1,
@@ -102,7 +102,7 @@ export const nameEn = style({
 
 export const nameJa = style({
   fontFamily: "var(--font-roboto)",
-  color: colors.darkGray,
+  color: colors.black_40,
   fontSize: "14px",
   lineHeight: 1,
   letterSpacing: 0,

@@ -15,7 +15,7 @@ export const inputBase = style({
   height: "3.5rem",
   alignItems: "center",
   borderRadius: ".5rem",
-  backgroundColor: colors.inputBackgroundGray,
+  backgroundColor: colors.black_04,
   paddingInline: "1rem",
   color: colors.black,
   selectors: {
@@ -52,7 +52,7 @@ export const defaultInput = style({
   outlineColor: "transparent",
   selectors: {
     "&::placeholder": {
-      color: colors.darkGray,
+      color: colors.black_40,
     },
   },
 });
@@ -83,7 +83,7 @@ export const captionNone = style({
 });
 
 export const captionDefault = style({
-  color: colors.darkGray,
+  color: colors.black_40,
 });
 
 export const error = style({

@@ -11,7 +11,7 @@ export const sidebar = style({
   padding: "4rem 0 2.5rem 2.5rem",
   overflowY: "auto",
   scrollbarWidth: "none",
-  backgroundColor: colors.sideNavBackground,
+  backgroundColor: colors.white_20,
   backdropFilter: "blur(54px)",
   WebkitBackdropFilter: "blur(54px)",
 });
@@ -21,7 +21,7 @@ export const sidebarInner = style({
   flexDirection: "column",
   minHeight: "100%",
   paddingRight: "2.5rem",
-  borderRight: `.5px solid ${colors.lightGray}`,
+  borderRight: `.5px solid ${colors.black_10}`,
 });
 
 export const sidebarLogo = style({
@@ -45,7 +45,7 @@ export const sidebarSectionWrapper = style({
 
 export const sidebarCopyright = style({
   fontSize: "11px",
-  color: colors.darkGray,
+  color: colors.black_40,
   fontWeight: 500,
   lineHeight: 1,
   letterSpacing: 0,

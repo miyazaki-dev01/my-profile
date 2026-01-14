@@ -40,7 +40,7 @@ export const form = style({
       gap: "1.5rem",
       marginBottom: "2.5rem",
       paddingBottom: "2.5rem",
-      borderBottom: `.5px solid ${colors.lightGray}`,
+      borderBottom: `.5px solid ${colors.black_10}`,
     },
   },
 });
@@ -61,7 +61,7 @@ export const button = style({
   paddingInline: "2rem",
   "@media": {
     [tbMedia]: {
-        width: "auto",
+      width: "auto",
     },
   },
 });

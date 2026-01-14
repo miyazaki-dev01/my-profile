@@ -19,7 +19,7 @@ export const spinner = style({
   borderRadius: "50%",
   position: "relative",
   vars: {
-    [spinnerBorderColorVar]: colors.lightGray,
+    [spinnerBorderColorVar]: colors.black_10,
   },
 });
 
@@ -38,7 +38,7 @@ const spinnerAfterBase = {
 export const spinnerColor = styleVariants({
   black: {
     vars: {
-      [spinnerBorderColorVar]: colors.lightGray,
+      [spinnerBorderColorVar]: colors.black_10,
     },
     selectors: {
       "&::after": {
@@ -49,7 +49,7 @@ export const spinnerColor = styleVariants({
   },
   white: {
     vars: {
-      [spinnerBorderColorVar]: colors.darkModeWhite,
+      [spinnerBorderColorVar]: colors.white_60,
     },
     selectors: {
       "&::after": {

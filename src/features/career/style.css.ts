@@ -42,7 +42,7 @@ export const spStickyBlock = style({
   top: "60px",
   marginInline: "-1.5rem",
   marginTop: "2rem",
-  backgroundColor: colors.headerNavBackground,
+  backgroundColor: colors.white_94,
   backdropFilter: "blur(10px)",
   zIndex: 1,
 

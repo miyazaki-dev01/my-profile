@@ -61,7 +61,7 @@ export const title = style({
 export const titleDivider = style({
   width: "100%",
   height: "1px",
-  background: colors.lightGray,
+  background: colors.black_10,
   transform: "scaleY(0.5)",
   transformOrigin: "top",
   marginBlock: "1rem",

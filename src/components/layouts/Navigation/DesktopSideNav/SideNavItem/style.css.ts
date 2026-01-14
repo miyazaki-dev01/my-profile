@@ -13,13 +13,13 @@ export const skeletonLine = style({
   height: "22px", // 行の高さ
   borderRadius: "8px", // 角丸
   overflow: "hidden",
-  background: colors.skeletonGray,
+  background: colors.black_04,
   selectors: {
     "&::before": {
       content: '""',
       position: "absolute",
       inset: 0,
-      backgroundImage: `linear-gradient(90deg, transparent, ${colors.skeletonWhite}, transparent)`,
+      backgroundImage: `linear-gradient(90deg, transparent, ${colors.white_80}, transparent)`,
       animation: `${shimmer} 1.2s linear infinite`,
     },
   },
