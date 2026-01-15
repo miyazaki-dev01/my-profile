@@ -1,4 +1,4 @@
-export type SkillCategory = "lang" | "fwk" | "infra" | "tool" | "cert";
+export type SkillCategory = "lang" | "fwk" | "db" | "infra" | "tool" | "cert";
 
 export type SkillCategoryParam = "all" | SkillCategory;
 

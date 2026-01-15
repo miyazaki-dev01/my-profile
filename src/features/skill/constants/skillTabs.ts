@@ -4,6 +4,7 @@ export const SKILL_TABS = [
   { key: "all", label: "ALL" },
   { key: "lang", label: "LANG" },
   { key: "fwk", label: "FWK" },
+  { key: "db", label: "DB" },
   { key: "infra", label: "INFRA" },
   { key: "tool", label: "TOOL" },
   { key: "cert", label: "CERT" },
