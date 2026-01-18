@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { META_TEXT } from "@/constants/metaTexts";
 import { notFound } from "next/navigation";
 import {
   getBlogSlugs,
   getBlogDetail,
   getBlogDraftById,
 } from "@/features/blog/blog-detail/api/getBlogDetail";
+import { createMetadata } from "@/libs/metadata";
+import { toPlainDescription } from "@/libs/metadata/toPlainDescription";
 import { getRelatedBlogList } from "@/features/blog/blog-detail/api/getRelatedBlogList";
 import { resolveContentDetail } from "@/features/content-detail/api/resolveContentDetail";
 import { BlogDetailPage } from "@/features/blog/blog-detail";
@@ -18,6 +22,28 @@ export async function generateStaticParams() {
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const content = await getBlogDetail(slug);
+  if (!content) {
+    return createMetadata({
+      title: META_TEXT.pages.blog.title,
+      description: META_TEXT.fallback.blogListDescription,
+      path: META_TEXT.pages.blog.path,
+    });
+  }
+
+  return createMetadata({
+    title: content.title,
+    description: toPlainDescription(content.body, 140),
+    path: `${META_TEXT.pages.blog.path}/${content.articleSlug}`,
+    image: content.thumbnail.url,
+    type: "article",
+  });
+}
 
 export default async function BlogDetailPageRoute({ params }: PageProps) {
   const { slug } = await params;

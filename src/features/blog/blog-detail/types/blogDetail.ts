@@ -1,4 +1,9 @@
 export type BlogDetail = {
+  thumbnail: {
+    url: string;
+    height: number;
+    width: number;
+  };
   title: string;
   tags?: string[];
   body: string;
