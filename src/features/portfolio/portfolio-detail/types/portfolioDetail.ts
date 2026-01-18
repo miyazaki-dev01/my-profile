@@ -1,4 +1,9 @@
 export type PortfolioDetail = {
+  thumbnail: {
+    url: string;
+    height: number;
+    width: number;
+  };
   mainImage: {
     url: string;
     height: number;

@@ -1,10 +1,23 @@
 import React from "react";
+import type { Metadata } from "next";
 import "@/styles/globals.css";
+import { URL as URLS } from "@/constants/urls";
+import { META_TEXT } from "@/constants/metaTexts";
 import { barlow, roboto } from "@/libs/fonts";
 import { InitialLoadingProvider } from "@/providers/InitialLoadingProvider";
 
 type Props = {
   children: React.ReactNode;
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(URLS.appRoot),
+  title: {
+    default: META_TEXT.root.title,
+    template: META_TEXT.root.titleTemplate,
+  },
+  description: META_TEXT.root.description,
+  icons: { icon: META_TEXT.root.icons.icon },
 };
 
 export default function RootLayout({ children }: Props) {
