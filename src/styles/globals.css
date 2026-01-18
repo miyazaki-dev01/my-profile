@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: var(--font-barlow), system-ui;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark body {
+  background-color: #000;
+  color: #fff;
+}
+
+#__next {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}

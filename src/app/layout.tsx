@@ -1,42 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import PrelineScript from "../components/PrelineScript";
-import Script from "next/script";
-import { META } from "@/constants/meta";
+import React from "react";
+import "@/styles/globals.css";
+import { barlow, roboto } from "@/libs/fonts";
+import { InitialLoadingProvider } from "@/providers/InitialLoadingProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  metadataBase: new URL(META.siteUrl),
+type Props = {
+  children: React.ReactNode;
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Props) {
   return (
-    <html lang="ja">
-      <Script
-        stylesheets={[
-          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css",
-        ]}
-      />
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="ja" className={`${barlow.variable} ${roboto.variable}`}>
+      <body>
+        <InitialLoadingProvider>
+          <div id="__next">{children}</div>
+        </InitialLoadingProvider>
       </body>
-      <PrelineScript />
     </html>
   );
 }
