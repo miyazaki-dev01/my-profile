@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:static": "STATIC_EXPORT=true next build",
+    "build:static": "node scripts/build-static.mjs",
+    "build:static:inner": "next build",
     "start": "next start",
     "lint": "next lint"
   },
