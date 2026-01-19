@@ -19,7 +19,6 @@
     "next": "^15.1.11",
     "next-mdx-remote-client": "^1.1.1",
     "open-graph-scraper": "^6.10.0",
-    "preline": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
@@ -29,14 +28,12 @@
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1",
     "shiki": "^3.8.1",
-    "swiper": "^11.2.2",
     "zod": "^4.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
-    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@vanilla-extract/next-plugin": "^2.4.8",
