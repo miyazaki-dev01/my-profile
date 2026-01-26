@@ -7,7 +7,6 @@ import {
   getBlogDraftById,
 } from "@/features/blog/blog-detail/api/getBlogDetail";
 import { createMetadata } from "@/libs/metadata";
-import { toPlainDescription } from "@/libs/metadata/toPlainDescription";
 import { getRelatedBlogList } from "@/features/blog/blog-detail/api/getRelatedBlogList";
 import { resolveContentDetail } from "@/features/content-detail/api/resolveContentDetail";
 import { BlogDetailPage } from "@/features/blog/blog-detail";
@@ -38,10 +37,12 @@ export async function generateMetadata({
 
   return createMetadata({
     title: content.title,
-    description: toPlainDescription(content.body, 140),
+    description: content.description,
     path: `${META_TEXT.pages.blog.path}/${content.articleSlug}`,
     image: content.thumbnail.url,
     type: "article",
+    publishedTime: content.publishedAt,
+    modifiedTime: content.revisedAt,
   });
 }
 
