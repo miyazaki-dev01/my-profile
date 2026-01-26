@@ -1,5 +1,4 @@
 import Script from "next/script";
-import React from "react";
 
 const GA_ID = "G-1DLG2NVCDJ";
 
@@ -8,7 +7,7 @@ const GA_ID = "G-1DLG2NVCDJ";
  * gtag.js を使用してページビューを計測
  * 本番環境でのみ有効
  */
-export const GoogleAnalytics = React.memo(() => {
+export function GoogleAnalytics() {
   if (process.env.NODE_ENV !== "production") {
     return null;
   }
