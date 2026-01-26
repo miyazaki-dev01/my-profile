@@ -5,6 +5,7 @@ export type BlogDetail = {
     width: number;
   };
   title: string;
+  description: string;
   tags?: string[];
   body: string;
   images: {
