@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { URL as URLS } from "@/constants/urls";
 import { META_TEXT } from "@/constants/metaTexts";
 import { barlow, roboto } from "@/libs/fonts";
+import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { InitialLoadingProvider } from "@/providers/InitialLoadingProvider";
 
 type Props = {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja" className={`${barlow.variable} ${roboto.variable}`}>
       <body>
+        <GoogleAnalytics />
         <InitialLoadingProvider>
           <div id="__next">{children}</div>
         </InitialLoadingProvider>
