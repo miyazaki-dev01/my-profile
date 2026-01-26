@@ -10,12 +10,16 @@ type CreateMetadataArgs = {
   image?: string;
   type?: "website" | "article";
   noindex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
 export function createMetadata({
   title,
   description,
   path,
+  publishedTime,
+  modifiedTime,
   image = DEFAULT_IMAGE,
   type = "website",
   noindex = false,
@@ -29,6 +33,9 @@ export function createMetadata({
       description,
       url: path,
       type,
+      siteName: META_TEXT.root.title,
+      ...(type === "article" && publishedTime ? { publishedTime } : {}),
+      ...(type === "article" && modifiedTime ? { modifiedTime } : {}),
       images: [{ url: image, alt: title }],
       locale: "ja_JP",
     },
