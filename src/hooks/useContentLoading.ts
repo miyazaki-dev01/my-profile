@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
  * ページ全体（画像なども含む）のロード完了を監視
  */
 export function useContentLoading(): boolean {
-  const [isLoading, setIsLoading] = useState(
-    () => typeof document === "undefined" || document.readyState !== "complete"
-  );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (document.readyState === "complete") {
