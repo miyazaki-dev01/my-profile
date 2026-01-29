@@ -6,10 +6,7 @@ import { useEffect, useState } from "react";
  * 初回ロード判定を行うフック
  */
 export function useInitialLoading(): boolean {
-  const initialValue =
-    typeof document === "undefined" ? true : document.readyState === "loading";
-
-  const [isInitialLoading, setIsInitialLoading] = useState(initialValue);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   useEffect(() => {
     if (document.readyState !== "loading") {
