@@ -8,6 +8,7 @@ import { ContentDetailBody } from "@/features/content-detail/components/ContentD
 import { SnsShareIcons } from "@/features/blog/blog-detail/components/SnsShareIcons";
 import { TableOfContents } from "@/features/blog/blog-detail/components/TableOfContents";
 import { RelatedArticles } from "@/features/blog/blog-detail/components/RelatedArticles";
+import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { ScrollToTopButton } from "@/features/content-detail/components/ScrollToTopButton";
 import { TbClock } from "react-icons/tb";
 import { TbRefresh } from "react-icons/tb";
@@ -30,7 +31,7 @@ export function BlogDetailPage({
   const { title, tags, body, images, articleSlug, publishedAt, revisedAt } =
     content;
 
-  const url = `${URL.appRoot}${PATH.blog}/${articleSlug}`;
+  const articleUrl = `${URL.appRoot}${PATH.blog}/${articleSlug}`;
 
   return (
     <div className={styles.root}>
@@ -62,7 +63,7 @@ export function BlogDetailPage({
               </div>
             </div>
 
-            <SnsShareIcons url={url} title={title} />
+            <SnsShareIcons url={articleUrl} title={title} />
           </div>
         </div>
 
@@ -76,6 +77,8 @@ export function BlogDetailPage({
       </div>
 
       <ScrollToTopButton />
+
+      <ArticleJsonLd article={content} url={articleUrl} />
     </div>
   );
 }
