@@ -9,10 +9,7 @@ const desktopMediaQuery = `(min-width: ${breakpoints.desktop}px)`;
  * デスクトップ幅以上かどうかを示すフラグを返すフック
  */
 export function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.matchMedia(desktopMediaQuery).matches;
-  });
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(desktopMediaQuery);
